@@ -1,4 +1,4 @@
-The Shapes Project provides a set of procedurally generated textures 
+The Shapes Project provides a set of procedurally generated textures
 for use in grahical user interfaces (GUIs).
 
 Complete source code (in Java) is provided under [a BSD license][license].
@@ -40,7 +40,7 @@ texture assets will be found in `Textures/build`.
 [gradle]: https://gradle.org "Gradle Project"
 [heart]: https://github.com/stephengold/Heart "Heart Project"
 [jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
-[license]: https://github.com/stephengold/Garrett/blob/master/LICENSE "Garrett license"
+[license]: https://github.com/stephengold/Shapes/blob/master/LICENSE "Shapes license"
 [markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
 [minie]: https://github.com/stephengold/Minie "Minie Project"
 [mint]: https://linuxmint.com "Linux Mint Project"
