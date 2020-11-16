@@ -1,0 +1,40 @@
+// Note: "common.gradle" in the root project contains additional initialization
+//   for this project. This initialization is applied in the "build.gradle"
+//   of the root project.
+
+description = 'Generate GUI textures'
+ext {
+    buildDir = 'build'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main/java'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.github.stephengold:Heart:6.1.0'
+}
+
+// generate GUI textures
+
+task textures {
+    dependsOn = ['pauseTex', 'powerTex', 'runTex']
+    description 'generate GUI textures'
+}
+
+task pauseTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakePause'
+    outputs.files(["$buildDir/pause.png"])
+}
+task powerTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakePower'
+    outputs.files(["$buildDir/power-off.png", "$buildDir/power-on.png"])
+}
+task runTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeRun'
+    outputs.files(["$buildDir/run.png"])
+}

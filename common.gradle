@@ -1,0 +1,30 @@
+// Gradle settings and tasks common to all subprojects
+
+apply plugin: 'java'
+
+group = 'com.github.stephengold'
+
+sourceCompatibility = '1.7'
+targetCompatibility = '1.7'
+
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) { // compile-time options:
+        options.compilerArgs << '-Xdiags:verbose'
+        options.compilerArgs << '-Xlint:unchecked'
+        //options.deprecation = true
+        options.encoding = 'UTF-8'
+    }
+    tasks.withType(JavaExec) { // runtime options:
+        classpath sourceSets.main.runtimeClasspath
+        enableAssertions true
+    }
+}
+
+ext {
+    // current versions of various libraries
+    jmonkeyengineVersion = '3.3.2-stable'
+}
+
+repositories {
+    jcenter()
+}
