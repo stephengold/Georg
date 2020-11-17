@@ -22,7 +22,7 @@ dependencies {
 // generate GUI textures
 
 task textures {
-    dependsOn = ['hornTex', 'pauseTex', 'powerTex', 'runTex']
+    dependsOn = ['hornTex', 'pauseTex', 'powerTex', 'runTex', 'steeringTex']
     description 'generate GUI textures'
 }
 
@@ -41,4 +41,8 @@ task powerTex(type: JavaExec) {
 task runTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeRun'
     outputs.files(["$buildDir/run.png"])
+}
+task steeringTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeSteering'
+    outputs.files(["$buildDir/steering.png"])
 }
