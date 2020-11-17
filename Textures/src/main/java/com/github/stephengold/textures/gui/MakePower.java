@@ -91,12 +91,12 @@ public class MakePower {
          */
         float opacity = 1f;
         Color white = new Color(1f, 1f, 1f, opacity);
-        Color black = new Color(0f, 0f, 0f, opacity);
+        Color red = new Color(0.3f, 0f, 0f, opacity);
         Color green = new Color(0f, 0.7f, 0f, opacity);
         /*
          * Generate color image maps.
          */
-        application.makePower(white, black, "power-off.png");
+        application.makePower(white, red, "power-off.png");
         application.makePower(white, green, "power-on.png");
     }
     // *************************************************************************
