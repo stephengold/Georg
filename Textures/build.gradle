@@ -22,10 +22,14 @@ dependencies {
 // generate GUI textures
 
 task textures {
-    dependsOn = ['pauseTex', 'powerTex', 'runTex']
+    dependsOn = ['hornTex', 'pauseTex', 'powerTex', 'runTex']
     description 'generate GUI textures'
 }
 
+task hornTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeHorn'
+    outputs.files(["$buildDir/horn-silent.png", "$buildDir/horn-sound.png"])
+}
 task pauseTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakePause'
     outputs.files(["$buildDir/pause.png"])
