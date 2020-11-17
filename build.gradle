@@ -5,3 +5,5 @@ plugins {
 subprojects {
     apply from: rootProject.file('common.gradle')
 }
+
+build.dependsOn(':Textures:textures')
