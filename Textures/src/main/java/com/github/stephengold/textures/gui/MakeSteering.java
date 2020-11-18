@@ -108,6 +108,8 @@ public class MakeSteering {
         BufferedImage image = new BufferedImage(textureSize, textureSize,
                 BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
+        //graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+        //        RenderingHints.VALUE_ANTIALIAS_ON);
 
         // circular rim
         graphics.setColor(fgColor);
