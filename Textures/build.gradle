@@ -23,10 +23,15 @@ dependencies {
 // generate GUI textures
 
 task textures {
-    dependsOn = ['hornTex', 'pauseTex', 'powerTex', 'runTex', 'steeringTex']
+    dependsOn = ['dialTex', 'hornTex', 'pauseTex', 'powerTex', \
+    'runTex', 'steeringTex']
     description 'generate GUI textures'
 }
 
+task dialTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeDials'
+    outputs.files(["$buildDir/speedo_bg_2.png", "$buildDir/tachometer_bg.png"])
+}
 task hornTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeHorn'
     outputs.files(["$buildDir/horn-silent.png", "$buildDir/horn-sound.png"])
