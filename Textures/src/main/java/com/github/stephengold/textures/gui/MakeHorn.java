@@ -34,10 +34,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the textures "horn-silent.png" and
- * "horn-sound.png" for a horn button.
+ * A console application to generate the "horn-silent.png" and "horn-sound.png"
+ * textures for a horn button.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -48,7 +49,7 @@ public class MakeHorn {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 256;
+    final private static int textureSize = 2048;
     /**
      * message logger for this class
      */
@@ -202,11 +203,18 @@ public class MakeHorn {
         }
         graphics.fillPolygon(xPoints, yPoints, numPoints);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
+         */
+        int finalSize = 128;
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
          */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

@@ -34,6 +34,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
  * A console application to generate the textures "power-off.png" and
@@ -48,7 +49,7 @@ public class MakePower {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 256;
+    final private static int textureSize = 2048;
     /**
      * message logger for this class
      */
@@ -157,11 +158,18 @@ public class MakePower {
         graphics.setColor(fgColor);
         graphics.fillRect(x1, y1, x2 - x1, y2 - y1);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
+         */
+        int finalSize = 128;
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
          */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
