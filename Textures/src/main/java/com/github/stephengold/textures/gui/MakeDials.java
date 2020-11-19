@@ -138,9 +138,10 @@ public class MakeDials {
          * Fill the redzone.
          */
         double redzoneRadius = 0.44;
+        double halfPi = Math.PI / 2.0;
         graphics.setColor(redzoneColor);
         TexUtils.fillSection(graphics, redzoneRadius, outerRadius,
-                0.0, 0.5 * Math.PI, textureSize);
+                halfPi - 1.0, halfPi, textureSize);
         /*
          * Downsample the image to the desired final size.
          */
