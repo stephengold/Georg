@@ -64,7 +64,7 @@ public class MakeNeedle {
     // new methods exposed
 
     /**
-     * Main entry point for the MakeRun application.
+     * Main entry point for the MakeNeedle application.
      *
      * @param arguments array of command-line arguments (not null)
      */
