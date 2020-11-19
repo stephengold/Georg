@@ -112,13 +112,19 @@ public class MakeSteering {
         Graphics2D graphics = image.createGraphics();
         //graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
         //        RenderingHints.VALUE_ANTIALIAS_ON);
-
-        // circular rim
+        /*
+         * Fill the (black) circular rim.
+         */
+        double innerRadius = 0.43;
+        double outerRadius = 0.5;
         graphics.setColor(fgColor);
-        fillSection(graphics, 0.0, Math.PI);
-        fillSection(graphics, Math.PI, 2.0 * Math.PI);
-
-        // 2 spokes forming a chevron
+        TexUtils.fillSection(graphics, innerRadius, outerRadius,
+                0.0, 2.0, textureSize);
+        TexUtils.fillSection(graphics, innerRadius, outerRadius,
+                1.9, 2.1 * Math.PI, textureSize);
+        /*
+         * Fill the 2 (black) spokes forming a chevron.
+         */
         int numPoints = 6;
         int[] xPoints = new int[numPoints];
         int[] yPoints = new int[numPoints];
@@ -129,7 +135,7 @@ public class MakeSteering {
         xPoints[0] = (int) Math.round(textureSize * x0);
         yPoints[0] = (int) Math.round(textureSize * y0);
         xPoints[1] = (int) Math.round(textureSize * 0.5);
-        yPoints[1] = (int) Math.round(textureSize * 0.35);
+        yPoints[1] = (int) Math.round(textureSize * 0.38);
         xPoints[2] = (int) Math.round(textureSize * (1.0 - x0));
         yPoints[2] = (int) Math.round(textureSize * y0);
         xPoints[3] = (int) Math.round(textureSize * x3);
@@ -155,43 +161,5 @@ public class MakeSteering {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-    }
-
-    /**
-     * Fill a section of the circular rim.
-     *
-     * @param graphics the graphics context on which to draw (not null)
-     * @param startTheta starting angle, measured CCW from the +Y axis
-     * @param endTheta ending angle, measured CCW from the +Y axis
-     */
-    private void fillSection(Graphics2D graphics, double startTheta,
-            double endTheta) {
-        int samplesPerArc = 64;
-        double innerRadius = 0.43;
-        double outerRadius = 0.5;
-
-        double thetaStep = (endTheta - startTheta) / (samplesPerArc - 1);
-        int numPoints = 2 * samplesPerArc;
-        int[] xPoints = new int[numPoints];
-        int[] yPoints = new int[numPoints];
-
-        for (int i = 0; i < samplesPerArc; i++) {
-            double theta = startTheta + i * thetaStep;
-            double sin = Math.sin(theta);
-            double cos = Math.cos(theta);
-
-            double xx = 0.5 + outerRadius * sin;
-            double yy = 0.5 + outerRadius * cos;
-            xPoints[i] = (int) Math.round(textureSize * xx);
-            yPoints[i] = (int) Math.round(textureSize * yy);
-
-            int j = numPoints - i - 1;
-            xx = 0.5 + innerRadius * sin;
-            yy = 0.5 + innerRadius * cos;
-            xPoints[j] = (int) Math.round(textureSize * xx);
-            yPoints[j] = (int) Math.round(textureSize * yy);
-        }
-
-        graphics.fillPolygon(xPoints, yPoints, numPoints);
     }
 }
