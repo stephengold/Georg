@@ -20,14 +20,18 @@ dependencies {
     implementation 'org.imgscalr:imgscalr-lib:4.2'
 }
 
-// generate GUI textures
+// generate textures
 
 task textures {
-    dependsOn = ['dialTex', 'hornTex', 'loadingTex', 'needleTex', 'pauseTex', \
-    'powerTex', 'runTex', 'steeringTex']
-    description 'generate GUI textures'
+    dependsOn = ['compassTex', 'dialTex', 'hornTex', 'loadingTex', 'needleTex', \
+    'pauseTex', 'powerTex', 'runTex', 'steeringTex']
+    description 'generate textures'
 }
 
+task compassTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeCompass'
+    outputs.files(["$buildDir/compass.png"])
+}
 task dialTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeDials'
     outputs.files(["$buildDir/speedo_bg_2.png", "$buildDir/tachometer_bg.png"])
