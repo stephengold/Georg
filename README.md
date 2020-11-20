@@ -1,5 +1,5 @@
 The Shapes Project provides a set of procedurally generated textures
-for use in grahical user interfaces (GUIs).
+for use in graphical user interfaces (GUIs).
 
 Complete source code (in Java) is provided under [a BSD license][license].
 
@@ -41,6 +41,7 @@ The source code is compatible with JDK 7.
 [github]: https://github.com "GitHub"
 [gradle]: https://gradle.org "Gradle Project"
 [heart]: https://github.com/stephengold/Heart "Heart Project"
+[imgscalr]: https://github.com/rkalla/imgscalr "ImgScalr Library"
 [jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
 [license]: https://github.com/stephengold/Shapes/blob/master/LICENSE "Shapes license"
 [markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
@@ -54,13 +55,12 @@ The source code is compatible with JDK 7.
 ## Acknowledgments
 
 Like most projects, the Shapes Project builds on the work of many who
-have gone before.  I therefore acknowledge the following
-software developers:
-
- + plus the creators of (and contributors to) the following software:
-    + the [Git] revision-control system and GitK commit viewer
+have gone before.  I therefore acknowledge the creators of (and contributors to)
+the following software:
     + the [Firefox] web browser
+    + the [Git] revision-control system and GitK commit viewer
     + the [Gradle] build tool
+    + the [ImgScalr] Library
     + the Java compiler, standard doclet, and runtime environment
     + [jMonkeyEngine][jme] and the jME3 Software Development Kit
     + the [Linux Mint][mint] operating system
@@ -68,7 +68,7 @@ software developers:
     + the [Markdown] document-conversion tool
     + the [NetBeans] integrated development environment
 
-I am grateful to [Github]
+I am grateful to [Github] and Imgur
 for providing free hosting for this project
 and many other open-source projects.
 
