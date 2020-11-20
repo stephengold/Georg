@@ -3,7 +3,7 @@ for use in grahical user interfaces (GUIs).
 
 Complete source code (in Java) is provided under [a BSD license][license].
 
-<img height="150" src="https://i.imgur.com/qsSK33r.png">
+<img height="450" src="https://i.imgur.com/qsSK33r.png">
 
 <a name="build"/>
 
