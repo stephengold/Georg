@@ -57,20 +57,20 @@ The source code is compatible with JDK 7.
 Like most projects, the Shapes Project builds on the work of many who
 have gone before.  I therefore acknowledge the creators of (and contributors to)
 the following software:
-    + the [Firefox] web browser
-    + the [Git] revision-control system and GitK commit viewer
-    + the [Gradle] build tool
-    + the [ImgScalr] Library
-    + the Java compiler, standard doclet, and runtime environment
-    + [jMonkeyEngine][jme] and the jME3 Software Development Kit
-    + the [Linux Mint][mint] operating system
-    + LWJGL, the Lightweight Java Game Library
-    + the [Markdown] document-conversion tool
-    + the [NetBeans] integrated development environment
+
++ the [Firefox] web browser
++ the [Git] revision-control system and GitK commit viewer
++ the [Gradle] build tool
++ the [ImgScalr] Library
++ the Java compiler, standard doclet, and runtime environment
++ [jMonkeyEngine][jme] and the jME3 Software Development Kit
++ the [Linux Mint][mint] operating system
++ LWJGL, the Lightweight Java Game Library
++ the [Markdown] document-conversion tool
++ the [NetBeans] integrated development environment
 
 I am grateful to [Github] and Imgur
-for providing free hosting for this project
-and many other open-source projects.
+for providing free hosting for this project and many other open-source projects.
 
 I'm also grateful to my dear Holly, for keeping me sane.
 
