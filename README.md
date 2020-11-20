@@ -3,13 +3,7 @@ for use in grahical user interfaces (GUIs).
 
 Complete source code (in Java) is provided under [a BSD license][license].
 
-<a name="conventions"/>
-
-## Conventions
-
-Package names begin with `com.github.stephengold.textures.gui`
-
-The source code is compatible with JDK 7.
+<img height="150" src="https://i.imgur.com/qsSK33r.png">
 
 <a name="build"/>
 
@@ -31,6 +25,14 @@ The source code is compatible with JDK 7.
 
 After a successful build,
 texture assets will be found in `Textures/build`.
+
+<a name="conventions"/>
+
+## Conventions
+
+Package names begin with `com.github.stephengold.textures.gui`
+
+The source code is compatible with JDK 7.
 
 [ant]: https://ant.apache.org "Apache Ant Project"
 [bsd3]: https://opensource.org/licenses/BSD-3-Clause "3-Clause BSD License"
