@@ -2,7 +2,7 @@
 //   for this project. This initialization is applied in the "build.gradle"
 //   of the root project.
 
-description = 'Generate GUI textures'
+description = 'Generate textures for More Advanced Vehicles'
 ext {
     buildDir = 'build'
 }

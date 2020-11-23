@@ -1,5 +1,5 @@
 The Shapes Project provides a set of procedurally generated textures
-for use in graphical user interfaces (GUIs).
+for use in JMonkeyEngine applications.
 
 Complete source code (in Java) is provided under [a BSD license][license].
 
@@ -24,7 +24,7 @@ Complete source code (in Java) is provided under [a BSD license][license].
    + using Windows Command Prompt:  `.\gradlew textures`
 
 After a successful build,
-texture assets will be found in `Textures/build`.
+texture assets will be found in `MavTextures/build`.
 
 <a name="conventions"/>
 
