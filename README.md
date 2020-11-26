@@ -9,9 +9,7 @@ Complete source code (in Java) is provided under [a BSD license][license].
 
 ## How to build Georg from source
 
- 1. Install build software:
-   + a Java Development Kit and
-   + [Gradle]
+ 1. Install a Java Development Kit (JDK), if you don't already have one.
  2. Download and extract the source code from GitHub:
    + using Git:
      + `git clone https://github.com/stephengold/Georg.git`
