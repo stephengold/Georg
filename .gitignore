@@ -1,5 +1,4 @@
 /.gradle/
 /.nb-gradle/
-/ShapesAssets/build/
-/GuiTextures/build/
 /Textures/build/
+/MavTextures/build/
