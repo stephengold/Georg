@@ -1,4 +1,4 @@
-The Shapes Project provides a set of procedurally generated textures
+The Georg Project provides procedurally generated assets
 for use in JMonkeyEngine applications.
 
 Complete source code (in Java) is provided under [a BSD license][license].
@@ -7,15 +7,15 @@ Complete source code (in Java) is provided under [a BSD license][license].
 
 <a name="build"/>
 
-## How to build Shapes from source
+## How to build Georg from source
 
  1. Install build software:
    + a Java Development Kit and
    + [Gradle]
  2. Download and extract the source code from GitHub:
    + using Git:
-     + `git clone https://github.com/stephengold/Shapes.git`
-     + `cd Shapes`
+     + `git clone https://github.com/stephengold/Georg.git`
+     + `cd Georg`
  3. Set the `JAVA_HOME` environment variable:
    + using Bash:  `export JAVA_HOME="` *path to your JDK* `"`
    + using Windows Command Prompt:  `set JAVA_HOME="` *path to your JDK* `"`
@@ -43,7 +43,7 @@ The source code is compatible with JDK 7.
 [heart]: https://github.com/stephengold/Heart "Heart Project"
 [imgscalr]: https://github.com/rkalla/imgscalr "ImgScalr Library"
 [jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
-[license]: https://github.com/stephengold/Shapes/blob/master/LICENSE "Shapes license"
+[license]: https://github.com/stephengold/Georg/blob/master/LICENSE "Georg license"
 [markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
 [minie]: https://github.com/stephengold/Minie "Minie Project"
 [mint]: https://linuxmint.com "Linux Mint Project"
@@ -54,7 +54,7 @@ The source code is compatible with JDK 7.
 
 ## Acknowledgments
 
-Like most projects, the Shapes Project builds on the work of many who
+Like most projects, the Georg Project builds on the work of many who
 have gone before.  I therefore acknowledge the creators of (and contributors to)
 the following software:
 

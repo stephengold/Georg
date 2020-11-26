@@ -2,7 +2,7 @@
  * settings.gradle: global settings shared by all subprojects
  */
 
-rootProject.name = 'Shapes'
+rootProject.name = 'Georg'
 
 /*
  * Enumerate subdirectories in the project's root directory that contain a
