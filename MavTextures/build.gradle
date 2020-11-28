@@ -24,7 +24,8 @@ dependencies {
 
 task textures {
     dependsOn = ['compassTex', 'dialTex', 'hornTex', 'loadingTex',
-     'needleTex', 'pauseTex', 'powerTex', 'runTex', 'steeringTex']
+     'needleTex', 'pauseTex', 'powerTex', 'runTex', 'singlestepTex',
+     'steeringTex']
     description 'generate textures'
 }
 
@@ -59,6 +60,10 @@ task powerTex(type: JavaExec) {
 task runTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeRun'
     outputs.files(["$buildDir/run.png"])
+}
+task singlestepTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeSingleStep'
+    outputs.files(["$buildDir/single-step.png"])
 }
 task steeringTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeSteering'
