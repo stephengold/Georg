@@ -23,8 +23,8 @@ dependencies {
 // generate textures
 
 task textures {
-    dependsOn = ['compassTex', 'dialTex', 'hornTex', 'loadingTex',
-     'needleTex', 'pauseTex', 'powerTex', 'runTex', 'singlestepTex',
+    dependsOn = ['compassTex', 'dialTex', 'hornTex', 'loadingTex', 'muteTex',
+     'needleTex', 'pauseTex', 'powerTex', 'runTex', 'singlestepTex', 'soundTex',
      'steeringTex']
     description 'generate textures'
 }
@@ -45,6 +45,10 @@ task loadingTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeLoading'
     outputs.files(["$buildDir/loading.png"])
 }
+task muteTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeMute'
+    outputs.files(["$buildDir/mute.png"])
+}
 task needleTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeNeedle'
     outputs.files(["$buildDir/speedo_needle_2.png"])
@@ -64,6 +68,10 @@ task runTex(type: JavaExec) {
 task singlestepTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeSingleStep'
     outputs.files(["$buildDir/single-step.png"])
+}
+task soundTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeSound'
+    outputs.files(["$buildDir/sound.png"])
 }
 task steeringTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeSteering'

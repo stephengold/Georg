@@ -91,4 +91,33 @@ class TexUtils {
 
         graphics.fillPolygon(xPoints, yPoints, numPoints);
     }
+
+    /**
+     * Fill a speaker shape (concave hexagon) with the current color.
+     */
+    static void fillSpeaker(Graphics2D graphics, int textureSize) {
+        int numPoints = 6;
+        int[] xPoints = new int[numPoints];
+        int[] yPoints = new int[numPoints];
+
+        double height = 0.6;
+        double width = 0.3;
+        double x1 = 0.4;
+        double x2 = x1 + width / 2;
+        double x0 = x1 - width / 2;
+
+        xPoints[0] = (int) Math.round(textureSize * x0);
+        yPoints[0] = (int) Math.round(textureSize * (0.5 - 0.2 * height));
+        xPoints[1] = (int) Math.round(textureSize * x1);
+        yPoints[1] = (int) Math.round(textureSize * (0.5 - 0.2 * height));
+        xPoints[2] = (int) Math.round(textureSize * x2);
+        yPoints[2] = (int) Math.round(textureSize * (0.5 - 0.5 * height));
+        xPoints[3] = (int) Math.round(textureSize * x2);
+        yPoints[3] = (int) Math.round(textureSize * (0.5 + 0.5 * height));
+        xPoints[4] = (int) Math.round(textureSize * x1);
+        yPoints[4] = (int) Math.round(textureSize * (0.5 + 0.2 * height));
+        xPoints[5] = (int) Math.round(textureSize * x0);
+        yPoints[5] = (int) Math.round(textureSize * (0.5 + 0.2 * height));
+        graphics.fillPolygon(xPoints, yPoints, numPoints);
+    }
 }
