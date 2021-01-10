@@ -23,7 +23,8 @@ dependencies {
 // generate textures
 
 task textures {
-    dependsOn = ['compassTex', 'dialTex', 'hornTex', 'loadingTex', 'muteTex',
+    dependsOn = ['compassTex', 'dialTex', 'hornTex', 'leftTriangleTex',
+     'loadingTex', 'muteTex',
      'needleTex', 'pauseTex', 'poweredByTex', 'powerTex', 'runTex',
      'singlestepTex', 'soundTex', 'steeringTex']
     description 'generate textures'
@@ -40,6 +41,10 @@ task dialTex(type: JavaExec) {
 task hornTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeHorn'
     outputs.files(["$buildDir/horn-silent.png", "$buildDir/horn-sound.png"])
+}
+task leftTriangleTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeLeftTriangle'
+    outputs.files(["$buildDir/left-triangle.png"])
 }
 task loadingTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeLoading'
