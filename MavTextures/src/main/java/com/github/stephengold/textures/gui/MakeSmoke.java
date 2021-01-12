@@ -112,8 +112,7 @@ public class MakeSmoke {
             for (int y = 0; y < textureSize; y++) {
                 float xx = (2 * x - textureSize) / (float) textureSize;
                 float yy = (2 * y - textureSize) / (float) textureSize;
-                double r2 = MyMath.sumOfSquares(xx, yy);
-                float alpha = (float) (1.0 - r2);
+                float alpha = 1f - MyMath.hypotenuse(xx, yy);
                 alpha = FastMath.clamp(alpha, 0f, 1f);
                 Heart.setGrayPixel(graphics, x, y, 1f, alpha);
             }
