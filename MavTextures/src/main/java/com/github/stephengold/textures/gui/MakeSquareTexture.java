@@ -88,6 +88,9 @@ public class MakeSquareTexture {
 
     /**
      * Downsample the image to the desired final size and write it to a file.
+     *
+     * @param finalSize the desired image size (pixels per side, &gt;0)
+     * @param fileName the name of the file to create (not null, not empty)
      */
     protected void downsampleAndWrite(int finalSize, String fileName) {
         BufferedImage downsampledImage = Scalr.resize(image,
@@ -105,7 +108,6 @@ public class MakeSquareTexture {
     /**
      * Draw a string of text centered at the specified X coordinate.
      *
-     * @param graphics the graphics context on which to draw (not null)
      * @param text the text to draw (not null)
      * @param centerX the X coordinate for the center (&ge;0, &le;1)
      * @param baseY the Y coordinate for the baseline (&ge;0, &le;1)
