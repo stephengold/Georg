@@ -26,7 +26,7 @@ task textures {
     dependsOn = ['compassTex', 'dialTex', 'hornTex', 'leftTriangleTex',
      'loadingTex', 'muteTex',
      'needleTex', 'pauseTex', 'poweredByTex', 'powerTex', 'runTex',
-     'singlestepTex', 'smokeTex', 'soundTex', 'steeringTex']
+     'singlestepTex', 'skidmarkTex', 'smokeTex', 'soundTex', 'steeringTex']
     description 'generate textures'
 }
 
@@ -77,6 +77,10 @@ task runTex(type: JavaExec) {
 task singlestepTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeSingleStep'
     outputs.files(["$buildDir/single-step.png"])
+}
+task skidmarkTex(type: JavaExec) {
+    main 'com.github.stephengold.textures.gui.MakeSkidmark'
+    outputs.files(["$buildDir/skidmark.png"])
 }
 task smokeTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakeSmoke'
