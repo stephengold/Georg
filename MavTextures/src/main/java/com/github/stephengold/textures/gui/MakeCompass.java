@@ -121,8 +121,8 @@ public class MakeCompass {
         /*
          * band around the equator
          */
-        int x1 = (int) Math.round(0f);
-        int x2 = (int) Math.round(textureWidth);
+        int x1 = Math.round(0f);
+        int x2 = Math.round(textureWidth);
         int y1 = (int) Math.round(textureHeight * 0.7);
         int y2 = (int) Math.round(textureHeight * 0.8);
         graphics.setColor(fgColor);
