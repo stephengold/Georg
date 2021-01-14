@@ -94,12 +94,7 @@ public class MakePoweredBy extends MakeSquareTexture {
      * Generate an image map.
      */
     private void makePoweredBy() {
-        Graphics2D graphics = createBufferedImage();
-        /*
-         * Start with all pixels light gray.
-         */
-        graphics.setColor(Color.LIGHT_GRAY);
-        graphics.fillRect(0, 0, textureSize, textureSize);
+        Graphics2D graphics = createOpaque(Color.LIGHT_GRAY);
         /*
          * Add 10 stars.
          */

@@ -102,12 +102,8 @@ public class MakeHorn extends MakeSquareTexture {
      * Generate an image map for a horn button.
      */
     private void makeHorn(Color fgColor, Color bgColor, String fileName) {
-        Graphics2D graphics = createBufferedImage();
-
-        // Start with all pixels white, to provide a border.
         Color white = new Color(1f, 1f, 1f, 1f);
-        graphics.setColor(white);
-        graphics.fillRect(0, 0, textureSize, textureSize);
+        Graphics2D graphics = createOpaque(white);
 
         // circular background for the button itself
         double r = 0.44;

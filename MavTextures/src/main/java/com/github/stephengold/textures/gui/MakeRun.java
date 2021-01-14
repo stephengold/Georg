@@ -99,11 +99,7 @@ public class MakeRun extends MakeSquareTexture {
      * Generate an image map for a "run" button.
      */
     private void makeRun(Color fgColor, Color bgColor, String fileName) {
-        Graphics2D graphics = createBufferedImage();
-
-        // Start with all pixels fgColor, to provide a border.
-        graphics.setColor(fgColor);
-        graphics.fillRect(0, 0, textureSize, textureSize);
+        Graphics2D graphics = createOpaque(fgColor);
 
         // circular background for the button itself
         double r = 0.44;

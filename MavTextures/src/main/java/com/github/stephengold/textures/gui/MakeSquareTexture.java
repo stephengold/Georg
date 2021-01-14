@@ -26,6 +26,7 @@
  */
 package com.github.stephengold.textures.gui;
 
+import java.awt.Color;
 import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -74,7 +75,23 @@ public class MakeSquareTexture {
     // protected methods
 
     /**
-     * Create a blank, color buffered image for the texture map.
+     * Create a blank, color-buffered, opaque image for the texture map.
+     *
+     * @return a new graphics context (not null)
+     */
+    protected Graphics2D createOpaque(Color color) {
+        image = new BufferedImage(textureSize, textureSize,
+                BufferedImage.TYPE_3BYTE_BGR);
+
+        graphics = image.createGraphics();
+        graphics.setColor(color);
+        graphics.fillRect(0, 0, textureSize, textureSize);
+
+        return graphics;
+    }
+
+    /**
+     * Create a blank, color-buffered, transparent image for the texture map.
      *
      * @return a new graphics context (not null)
      */

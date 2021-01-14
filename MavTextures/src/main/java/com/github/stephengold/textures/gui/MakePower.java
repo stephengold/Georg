@@ -102,11 +102,7 @@ public class MakePower extends MakeSquareTexture {
      * Generate an image map for a power button.
      */
     private void makePower(Color fgColor, Color bgColor, String fileName) {
-        Graphics2D graphics = createBufferedImage();
-
-        // Start with all pixels fgColor, to provide a border.
-        graphics.setColor(fgColor);
-        graphics.fillRect(0, 0, textureSize, textureSize);
+        Graphics2D graphics = createOpaque(fgColor);
 
         // circular background for the button itself
         double r = 0.44;
