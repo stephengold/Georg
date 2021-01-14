@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020, Stephen Gold
+ Copyright (c) 2020-2021, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -28,38 +28,32 @@ package com.github.stephengold.textures.gui;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
-import org.imgscalr.Scalr;
 
 /**
  * A console application to generate the "powered-by.jpeg" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
-public class MakePoweredBy {
+public class MakePoweredBy extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 
-    /**
-     * size of the texture map (pixels per side)
-     */
-    final private static int textureSize = 2048;
     /**
      * message logger for this class
      */
     final private static Logger logger
             = Logger.getLogger(MakePoweredBy.class.getName());
-    /**
-     * filesystem path to the asset directory/folder for output
-     */
-    final private static String assetDirPath = "build";
+    // *************************************************************************
+    // constructors
+
+    private MakePoweredBy() {
+        super(2048);
+    }
     // *************************************************************************
     // new methods exposed
 
@@ -100,14 +94,9 @@ public class MakePoweredBy {
      * Generate an image map.
      */
     private void makePoweredBy() {
+        Graphics2D graphics = createBufferedImage();
         /*
-         * Create a blank, color buffered image for the texture map.
-         */
-        BufferedImage image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_4BYTE_ABGR);
-        Graphics2D graphics = image.createGraphics();
-        /*
-         * Start with all pixels bgColor.
+         * Start with all pixels light gray.
          */
         graphics.setColor(Color.LIGHT_GRAY);
         graphics.fillRect(0, 0, textureSize, textureSize);
@@ -127,28 +116,14 @@ public class MakePoweredBy {
          */
         graphics.setColor(Color.DARK_GRAY);
         graphics.setFont(new Font("Serif", Font.ITALIC, 140));
-        drawString(graphics, "POWERED BY:", 0.5, 0.5);
+        drawString("POWERED BY:", 0.5, 0.5);
 
         graphics.setColor(new Color(0.294f, 0.063f, 0f, 1f));
         graphics.setFont(new Font("Serif", Font.BOLD, 180));
-        drawString(graphics, "jMonkeyEngine", 0.5, 0.64);
-        /*
-         * Downsample the image to the desired final size.
-         */
+        drawString("jMonkeyEngine", 0.5, 0.64);
+
         int finalSize = 512;
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
-                finalSize, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
-        String filePath
-                = String.format("%s/%s", assetDirPath, "powered-by.png");
-        try {
-            Heart.writeImage(filePath, downsampledImage);
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        downsampleAndWrite(finalSize, "powered-by.png");
     }
     // *************************************************************************
     // private methods
@@ -177,23 +152,5 @@ public class MakePoweredBy {
         }
 
         graphics.fillPolygon(xPoints, yPoints, numPoints);
-    }
-
-    /**
-     * Draw a string of text centered at the specified X coordinate.
-     *
-     * @param graphics the graphics context on which to draw (not null)
-     * @param text the text to draw (not null)
-     * @param centerX the X coordinate for the center (&ge;0, &le;1)
-     * @param baseY the Y coordinate for the baseline (&ge;0, &le;1)
-     */
-    private void drawString(Graphics2D graphics, String text, double centerX,
-            double baseY) {
-        FontMetrics fontMetrics = graphics.getFontMetrics();
-        int width = fontMetrics.stringWidth(text);
-
-        int x = (int) Math.round(textureSize * centerX - width / 2.0);
-        int y = (int) Math.round(textureSize * baseY);
-        graphics.drawString(text, x, y);
     }
 }

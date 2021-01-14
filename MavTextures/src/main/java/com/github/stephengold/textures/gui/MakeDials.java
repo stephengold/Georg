@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020, Stephen Gold
+ Copyright (c) 2020-2021, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -28,13 +28,10 @@ package com.github.stephengold.textures.gui;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
-import org.imgscalr.Scalr;
 
 /**
  * A console application to generate the "speedo_bg_2.png" and
@@ -42,23 +39,21 @@ import org.imgscalr.Scalr;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-public class MakeDials {
+public class MakeDials extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 
-    /**
-     * size of the texture map (pixels per side)
-     */
-    final private static int textureSize = 2048;
     /**
      * message logger for this class
      */
     final private static Logger logger
             = Logger.getLogger(MakeDials.class.getName());
-    /**
-     * filesystem path to the asset directory/folder for output
-     */
-    final private static String assetDirPath = "build";
+    // *************************************************************************
+    // constructors
+
+    private MakeDials() {
+        super(2048);
+    }
     // *************************************************************************
     // new methods exposed
 
@@ -105,13 +100,8 @@ public class MakeDials {
     /**
      * Generate an image map for the background of a dial.
      */
-    private void makeDial(Color redzoneColor, String assetPath) {
-        /*
-         * Create a blank, color buffered image for the texture map.
-         */
-        BufferedImage image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_4BYTE_ABGR);
-        Graphics2D graphics = image.createGraphics();
+    private void makeDial(Color redzoneColor, String fileName) {
+        Graphics2D graphics = createBufferedImage();
         /*
          * Fill the (cyan) outer edge.
          */
@@ -142,21 +132,8 @@ public class MakeDials {
         graphics.setColor(redzoneColor);
         TexUtils.fillSection(graphics, redzoneRadius, outerRadius,
                 halfPi - 1.0, halfPi, textureSize);
-        /*
-         * Downsample the image to the desired final size.
-         */
+
         int finalSize = 201;
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
-                finalSize, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
-        String filePath = String.format("%s/%s", assetDirPath, assetPath);
-        try {
-            Heart.writeImage(filePath, downsampledImage);
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        downsampleAndWrite(finalSize, fileName);
     }
 }

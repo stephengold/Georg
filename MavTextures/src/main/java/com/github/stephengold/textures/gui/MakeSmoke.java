@@ -28,37 +28,32 @@ package com.github.stephengold.textures.gui;
 
 import com.jme3.math.FastMath;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
 import jme3utilities.math.MyMath;
-import org.imgscalr.Scalr;
 
 /**
  * A console application to generate the "smoke.png" texture for a particle.
  *
  * @author Stephen Gold sgold@sonic.net
  */
-public class MakeSmoke {
+public class MakeSmoke extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 
-    /**
-     * size of the texture map (pixels per side)
-     */
-    final private static int textureSize = 64;
     /**
      * message logger for this class
      */
     final private static Logger logger
             = Logger.getLogger(MakeSmoke.class.getName());
-    /**
-     * filesystem path to the asset directory/folder for output
-     */
-    final private static String assetDirPath = "build";
+    // *************************************************************************
+    // constructors
+
+    private MakeSmoke() {
+        super(64);
+    }
     // *************************************************************************
     // new methods exposed
 
@@ -98,13 +93,8 @@ public class MakeSmoke {
     /**
      * Generate a color image map for a smoke particle.
      */
-    private void makeSmoke(String assetPath) {
-        /*
-         * Create a blank, grayscale buffered image for the texture map.
-         */
-        BufferedImage image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_4BYTE_ABGR);
-        Graphics2D graphics = image.createGraphics();
+    private void makeSmoke(String fileName) {
+        Graphics2D graphics = createBufferedImage();
         /*
          * Set the opacity of each pixel.
          */
@@ -117,21 +107,8 @@ public class MakeSmoke {
                 Heart.setGrayPixel(graphics, x, y, 1f, alpha);
             }
         }
-        /*
-         * Downsample the image to the desired final size.
-         */
+
         int finalSize = 32;
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
-                finalSize, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
-        String filePath = String.format("%s/%s", assetDirPath, assetPath);
-        try {
-            Heart.writeImage(filePath, downsampledImage);
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        downsampleAndWrite(finalSize, fileName);
     }
 }

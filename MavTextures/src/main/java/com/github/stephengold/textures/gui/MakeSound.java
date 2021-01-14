@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020, Stephen Gold
+ Copyright (c) 2020-2021, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -28,36 +28,31 @@ package com.github.stephengold.textures.gui;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
-import org.imgscalr.Scalr;
 
 /**
  * A console application to generate the "sound.png" texture for a button.
  *
  * @author Stephen Gold sgold@sonic.net
  */
-public class MakeSound {
+public class MakeSound extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 
-    /**
-     * size of the texture map (pixels per side)
-     */
-    final private static int textureSize = 2048;
     /**
      * message logger for this class
      */
     final private static Logger logger
             = Logger.getLogger(MakeSound.class.getName());
-    /**
-     * filesystem path to the asset directory/folder for output
-     */
-    final private static String assetDirPath = "build";
+    // *************************************************************************
+    // constructors
+
+    private MakeSound() {
+        super(2048);
+    }
     // *************************************************************************
     // new methods exposed
 
@@ -103,13 +98,8 @@ public class MakeSound {
     /**
      * Generate an image map for a sound button.
      */
-    private void makeSound(Color fgColor, Color bgColor, String assetPath) {
-        /*
-         * Create a blank, color buffered image for the texture map.
-         */
-        BufferedImage image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_4BYTE_ABGR);
-        Graphics2D graphics = image.createGraphics();
+    private void makeSound(Color fgColor, Color bgColor, String fileName) {
+        Graphics2D graphics = createBufferedImage();
 
         // Start with all pixels fgColor, to provide a border.
         graphics.setColor(fgColor);
@@ -135,21 +125,8 @@ public class MakeSound {
         double r2 = 0.27;
         TexUtils.fillSection(graphics, r2, r2 + thickness, startTheta, endTheta,
                 textureSize);
-        /*
-         * Downsample the image to the desired final size.
-         */
+
         int finalSize = 128;
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
-                finalSize, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
-        String filePath = String.format("%s/%s", assetDirPath, assetPath);
-        try {
-            Heart.writeImage(filePath, downsampledImage);
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
+        downsampleAndWrite(finalSize, fileName);
     }
 }
