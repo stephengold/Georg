@@ -97,7 +97,7 @@ public class MakeNeedle {
         /*
          * Generate a color image map.
          */
-        application.makeMeedle(red, white, "speedo_needle_2.png");
+        application.makeNeedle(red, white, "speedo_needle_2.png");
     }
     // *************************************************************************
     // private methods
@@ -105,7 +105,7 @@ public class MakeNeedle {
     /**
      * Generate an image map for an indicator needle.
      */
-    private void makeMeedle(Color mainColor, Color pivotColor,
+    private void makeNeedle(Color mainColor, Color pivotColor,
             String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
