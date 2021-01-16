@@ -25,7 +25,7 @@ dependencies {
 task textures {
     dependsOn = ['compassTex', 'dialTex', 'hornTex', 'leftTriangleTex',
      'loadingTex', 'muteTex',
-     'needleTex', 'pauseTex', 'poweredByTex', 'powerTex', 'runTex',
+     'needleTex', 'pauseTex', 'powerTex', 'runTex',
      'singlestepTex', 'skidmarkTex', 'smokeTex', 'soundTex', 'steeringTex']
     description 'generate textures'
 }
@@ -61,10 +61,6 @@ task needleTex(type: JavaExec) {
 task pauseTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakePause'
     outputs.files(["$buildDir/pause.png"])
-}
-task poweredByTex(type: JavaExec) {
-    main 'com.github.stephengold.textures.gui.MakePoweredBy'
-    outputs.files(["$buildDir/powered-by.png"])
 }
 task powerTex(type: JavaExec) {
     main 'com.github.stephengold.textures.gui.MakePower'
