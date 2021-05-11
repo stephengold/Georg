@@ -2,32 +2,22 @@
 //   for this project. This initialization is applied in the "build.gradle"
 //   of the root project.
 
-description = 'Generate textures for More Advanced Vehicles'
+description = 'Generate texture assets for More Advanced Vehicles'
 ext {
     buildDir = 'build'
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src/main/java'
-        }
-    }
-}
-
 dependencies {
-    implementation 'com.github.stephengold:Heart:6.4.2'
-    implementation 'org.imgscalr:imgscalr-lib:4.2'
+    implementation 'com.github.stephengold:Heart:' + heartVersion
+    implementation 'org.imgscalr:imgscalr-lib:' + imgscalrVersion
 }
-
-// generate textures
 
 task textures {
     dependsOn = ['compassTex', 'dialTex', 'hornTex', 'leftTriangleTex',
      'loadingTex', 'muteTex',
      'needleTex', 'pauseTex', 'powerTex', 'runTex',
      'singlestepTex', 'skidmarkTex', 'smokeTex', 'soundTex', 'steeringTex']
-    description 'generate textures'
+    description 'Generate textures assets for More Advanced Vehicles'
 }
 
 task compassTex(type: JavaExec) {
