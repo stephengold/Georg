@@ -9,7 +9,6 @@ ext {
 
 dependencies {
     implementation 'com.github.stephengold:Heart:' + heartVersion
-    implementation 'org.jmonkeyengine:jme3-effects:' + jmonkeyengineVersion
 }
 
 // generate textures
