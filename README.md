@@ -22,13 +22,11 @@ Complete source code (in Java) is provided under [a BSD license][license].
    + using Windows Command Prompt:  `.\gradlew textures`
 
 After a successful build,
-texture assets will be found in `MavTextures/build`.
+texture assets will be found in `HeartTextures/build` and `MavTextures/build`.
 
 <a name="conventions"/>
 
 ## Conventions
-
-Package names begin with `com.github.stephengold.textures.gui`
 
 The source code is compatible with JDK 7.
 

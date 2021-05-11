@@ -1,0 +1,54 @@
+// Note: "common.gradle" in the root project contains additional initialization
+//   for this project. This initialization is applied in the "build.gradle"
+//   of the root project.
+
+description = 'Generate texture s included in the Heart Library'
+ext {
+    buildDir = 'build'
+}
+
+dependencies {
+    implementation 'com.github.stephengold:Heart:' + heartVersion
+    implementation 'org.jmonkeyengine:jme3-effects:' + jmonkeyengineVersion
+}
+
+// generate textures
+
+task textures {
+    dependsOn = ['cross', 'lozenge', 'mascle', 'pin', 'ring', \
+        'saltire', 'solidCircle', 'square']
+    description 'Generate texture assets included in the Heart Library'
+}
+
+task cross(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakeCross'
+    outputs.files(["$buildDir/cross.png"])
+}
+task lozenge(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakeLozenge'
+    outputs.files(["$buildDir/lozenge.png"])
+}
+task mascle(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakeMascle'
+    outputs.files(["$buildDir/mascle.png"])
+}
+task pin(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakePin'
+    outputs.files(["$buildDir/pin.png"])
+}
+task ring(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakeRing'
+    outputs.files(["$buildDir/ring.png"])
+}
+task saltire(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakeSaltire'
+    outputs.files(["$buildDir/saltire.png"])
+}
+task solidCircle(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakeSolidCircle'
+    outputs.files(["$buildDir/solid circle.png"])
+}
+task square(type: JavaExec) {
+    main 'jme3utilities.debug.textures.MakeSquare'
+    outputs.files(["$buildDir/square.png"])
+}
