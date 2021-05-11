@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020, Stephen Gold
+ Copyright (c) 2020-2021, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -56,8 +56,7 @@ public class MakePin {
     /**
      * filesystem path to the asset directory/folder for output
      */
-    final private static String assetDirPath
-            = "../HeartLibrary/src/main/resources";
+    final private static String assetDirPath = "build";
     // *************************************************************************
     // new methods exposed
 
@@ -118,7 +117,7 @@ public class MakePin {
         /*
          * Write the image to the asset file.
          */
-        String assetPath = "Textures/shapes/pin.png";
+        String assetPath = "pin.png";
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
             Heart.writeImage(filePath, image);

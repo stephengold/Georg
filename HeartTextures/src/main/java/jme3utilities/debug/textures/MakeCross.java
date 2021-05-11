@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2018-2020, Stephen Gold
+ Copyright (c) 2018-2021, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -56,8 +56,7 @@ public class MakeCross {
     /**
      * filesystem path to the asset directory/folder for output
      */
-    final private static String assetDirPath
-            = "../HeartLibrary/src/main/resources";
+    final private static String assetDirPath = "build";
     // *************************************************************************
     // new methods exposed
 
@@ -117,7 +116,7 @@ public class MakeCross {
         /*
          * Write the image to the asset file.
          */
-        String assetPath = "Textures/shapes/cross.png";
+        String assetPath = "cross.png";
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
             Heart.writeImage(filePath, image);
