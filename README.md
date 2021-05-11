@@ -3,7 +3,7 @@ for use in JMonkeyEngine applications.
 
 Complete source code (in Java) is provided under [a BSD license][license].
 
-<img height="450" src="https://i.imgur.com/qsSK33r.png">
+<img height="450" src="https://i.imgur.com/4B5J8jU.png">
 
 <a name="build"/>
 
