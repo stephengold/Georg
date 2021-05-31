@@ -12,6 +12,8 @@ dependencies {
     implementation 'org.imgscalr:imgscalr-lib:' + imgscalrVersion
 }
 
+// generate textures
+
 task textures {
     dependsOn = ['compassTex', 'dialTex', 'hornTex', 'leftTriangleTex',
      'loadingTex', 'muteTex',
