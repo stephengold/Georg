@@ -24,7 +24,7 @@ ext {
     // current versions of various libraries
     heartVersion = '6.4.3+for33'
     imgscalrVersion = '4.2'
-    jmonkeyengineVersion = '3.3.2-stable'
+    jmonkeyengineVersion = '3.4.0-stable'
 }
 
 repositories {
