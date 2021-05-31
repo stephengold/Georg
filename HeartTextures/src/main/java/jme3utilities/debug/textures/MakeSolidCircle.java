@@ -34,9 +34,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the texture "solid circle.png".
+ * A console application to generate the "solid circle.png" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -47,7 +48,8 @@ public class MakeSolidCircle {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 64;
+    final private static int finalSize = 64;
+    final private static int textureSize = 640;
     /**
      * message logger for this class
      */
@@ -88,7 +90,7 @@ public class MakeSolidCircle {
         /*
          * Generate color image map.
          */
-        application.makeSolidCircle();
+        application.makeSolidCircle("solid circle.png");
     }
     // *************************************************************************
     // private methods
@@ -96,7 +98,7 @@ public class MakeSolidCircle {
     /**
      * Generate an image map for a solid circle.
      */
-    private void makeSolidCircle() {
+    private void makeSolidCircle(String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
          */
@@ -109,14 +111,19 @@ public class MakeSolidCircle {
         Color white = new Color(brightness, brightness, brightness, opacity);
         graphics.setColor(white);
 
-        graphics.fillOval(0, 0, 64, 64);
+        graphics.fillOval(0, 0, 640, 640);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
          */
-        String assetPath = "solid circle.png";
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
+         */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

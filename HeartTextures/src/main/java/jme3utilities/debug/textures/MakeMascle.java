@@ -34,9 +34,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the texture "mascle.png".
+ * A console application to generate the "mascle.png" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -47,7 +48,8 @@ public class MakeMascle {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 64;
+    final private static int finalSize = 64;
+    final private static int textureSize = 640;
     /**
      * message logger for this class
      */
@@ -86,9 +88,9 @@ public class MakeMascle {
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
         /*
-         * Generate color image map.
+         * Generate a color image map.
          */
-        application.makeMascle();
+        application.makeMascle("mascle.png");
     }
     // *************************************************************************
     // private methods
@@ -96,7 +98,7 @@ public class MakeMascle {
     /**
      * Generate an image map for a mascle.
      */
-    private void makeMascle() {
+    private void makeMascle(String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
          */
@@ -109,22 +111,27 @@ public class MakeMascle {
         Color white = new Color(brightness, brightness, brightness, opacity);
         graphics.setColor(white);
 
-        int[] xPoints = {0, 31, 63, 52, 31, 11};
-        int[] yPoints = {31, 0, 31, 31, 11, 31};
+        int[] xPoints = {0, 310, 630, 520, 310, 110};
+        int[] yPoints = {310, 0, 310, 310, 110, 310};
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
 
-        int[] xPoints2 = {0, 31, 63, 52, 31, 11};
-        int[] yPoints2 = {31, 63, 31, 31, 52, 31};
+        int[] xPoints2 = {0, 310, 630, 520, 310, 110};
+        int[] yPoints2 = {310, 630, 310, 310, 520, 310};
         int numPoints2 = xPoints2.length;
         graphics.fillPolygon(xPoints2, yPoints2, numPoints2);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
          */
-        String assetPath = "mascle.png";
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
+         */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

@@ -34,9 +34,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the texture "pin.png".
+ * A console application to generate the "pin.png" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -47,7 +48,8 @@ public class MakePin {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 128;
+    final private static int finalSize = 128;
+    final private static int textureSize = 1280;
     /**
      * message logger for this class
      */
@@ -86,9 +88,9 @@ public class MakePin {
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
         /*
-         * Generate color image map.
+         * Generate a color image map.
          */
-        application.makePin();
+        application.makePin("pin.png");
     }
     // *************************************************************************
     // private methods
@@ -96,7 +98,7 @@ public class MakePin {
     /**
      * Generate an image map for a pinned soft-body node, an inverted teardrop.
      */
-    private void makePin() {
+    private void makePin(String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
          */
@@ -109,18 +111,24 @@ public class MakePin {
         Color white = new Color(brightness, brightness, brightness, opacity);
         graphics.setColor(white);
 
-        graphics.fillOval(44, 0, 40, 40);
-        int[] xPoints = new int[]{46, 64, 82};
-        int[] yPoints = new int[]{30, 64, 30};
+        graphics.fillOval(440, 0, 400, 400);
+
+        int[] xPoints = new int[]{460, 640, 820};
+        int[] yPoints = new int[]{300, 640, 300};
         int nPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, nPoints);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
          */
-        String assetPath = "pin.png";
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
+         */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

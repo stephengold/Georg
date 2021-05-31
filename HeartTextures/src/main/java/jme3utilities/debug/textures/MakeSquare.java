@@ -34,9 +34,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the texture "square.png".
+ * A console application to generate the "square.png" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -47,7 +48,8 @@ public class MakeSquare {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 64;
+    final private static int finalSize = 64;
+    final private static int textureSize = 640;
     /**
      * message logger for this class
      */
@@ -86,9 +88,9 @@ public class MakeSquare {
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
         /*
-         * Generate color image map.
+         * Generate a color image map.
          */
-        application.makeSquare();
+        application.makeSquare("square.png");
     }
     // *************************************************************************
     // private methods
@@ -96,7 +98,7 @@ public class MakeSquare {
     /**
      * Generate an image map for a (voided) square.
      */
-    private void makeSquare() {
+    private void makeSquare(String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
          */
@@ -109,22 +111,27 @@ public class MakeSquare {
         Color white = new Color(brightness, brightness, brightness, opacity);
         graphics.setColor(white);
 
-        int[] xPoints = {0, 63, 63, 52, 52, 11};
-        int[] yPoints = {0, 0, 63, 52, 11, 11};
+        int[] xPoints = {0, 630, 630, 520, 520, 110};
+        int[] yPoints = {0, 0, 630, 520, 110, 110};
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
 
-        int[] xPoints2 = {0, 0, 63, 52, 11, 11};
-        int[] yPoints2 = {0, 63, 63, 52, 52, 11};
+        int[] xPoints2 = {0, 0, 630, 520, 110, 110};
+        int[] yPoints2 = {0, 630, 630, 520, 520, 110};
         int numPoints2 = xPoints2.length;
         graphics.fillPolygon(xPoints2, yPoints2, numPoints2);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
          */
-        String assetPath = "square.png";
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
+         */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

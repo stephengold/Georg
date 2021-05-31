@@ -34,9 +34,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the texture "ring.png".
+ * A console application to generate the "ring.png" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -47,11 +48,12 @@ public class MakeRing {
     /**
      * number of samples per arc
      */
-    final private static int samplesPerArc = 32;
+    final private static int samplesPerArc = 180;
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 64;
+    final private static int finalSize = 64;
+    final private static int textureSize = 640;
     /**
      * outer radius of the ring (in pixels)
      */
@@ -106,9 +108,9 @@ public class MakeRing {
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
         /*
-         * Generate color image map.
+         * Generate a color image map.
          */
-        application.makeRing();
+        application.makeRing("ring.png");
     }
     // *************************************************************************
     // private methods
@@ -116,7 +118,7 @@ public class MakeRing {
     /**
      * Generate an image map for a ring.
      */
-    private void makeRing() {
+    private void makeRing(String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
          */
@@ -132,12 +134,17 @@ public class MakeRing {
         fillSection(graphics, 0.0, Math.PI);
         fillSection(graphics, Math.PI, 2.0 * Math.PI);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
          */
-        String assetPath = "ring.png";
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
+         */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

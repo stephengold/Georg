@@ -34,9 +34,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the texture "cross.png".
+ * A console application to generate the "cross.png" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -47,7 +48,8 @@ public class MakeCross {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 64;
+    final private static int finalSize = 64;
+    final private static int textureSize = 640;
     /**
      * message logger for this class
      */
@@ -86,9 +88,9 @@ public class MakeCross {
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
         /*
-         * Generate color image map.
+         * Generate a color image map.
          */
-        application.makeCross();
+        application.makeCross("cross.png");
     }
     // *************************************************************************
     // private methods
@@ -96,7 +98,7 @@ public class MakeCross {
     /**
      * Generate an image map for an equal-armed cross.
      */
-    private void makeCross() {
+    private void makeCross(String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
          */
@@ -109,17 +111,22 @@ public class MakeCross {
         Color white = new Color(brightness, brightness, brightness, opacity);
         graphics.setColor(white);
 
-        int[] xPoints = {25, 38, 38, 63, 63, 38, 38, 25, 25, 0, 0, 25};
-        int[] yPoints = {0, 0, 25, 25, 38, 38, 63, 63, 38, 38, 25, 25};
+        int[] xPoints = {250, 380, 380, 630, 630, 380, 380, 250, 250, 0, 0, 250};
+        int[] yPoints = {0, 0, 250, 250, 380, 380, 630, 630, 380, 380, 250, 250};
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
          */
-        String assetPath = "cross.png";
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
+         */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }

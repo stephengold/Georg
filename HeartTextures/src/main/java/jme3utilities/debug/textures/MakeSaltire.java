@@ -34,9 +34,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import jme3utilities.Heart;
 import jme3utilities.MyString;
+import org.imgscalr.Scalr;
 
 /**
- * A console application to generate the texture "saltire.png".
+ * A console application to generate the "saltire.png" texture.
  *
  * @author Stephen Gold sgold@sonic.net
  */
@@ -47,7 +48,8 @@ public class MakeSaltire {
     /**
      * size of the texture map (pixels per side)
      */
-    final private static int textureSize = 64;
+    final private static int finalSize = 64;
+    final private static int textureSize = 640;
     /**
      * message logger for this class
      */
@@ -86,9 +88,9 @@ public class MakeSaltire {
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
         /*
-         * Generate color image map.
+         * Generate a color image map.
          */
-        application.makeSaltire();
+        application.makeSaltire("saltire.png");
     }
     // *************************************************************************
     // private methods
@@ -96,7 +98,7 @@ public class MakeSaltire {
     /**
      * Generate an image map for a saltire.
      */
-    private void makeSaltire() {
+    private void makeSaltire(String assetPath) {
         /*
          * Create a blank, color buffered image for the texture map.
          */
@@ -110,26 +112,31 @@ public class MakeSaltire {
         graphics.setColor(white);
 
         int[] xPoints = {
-            6, 10, 31, 53, 57,
-            63, 63, 42, 63, 63,
-            57, 53, 31, 10, 6,
-            0, 0, 21, 0, 0
+            60, 100, 310, 530, 570,
+            630, 630, 420, 630, 630,
+            570, 530, 310, 100, 60,
+            0, 0, 210, 0, 0
         };
         int[] yPoints = {
-            0, 0, 21, 0, 0,
-            6, 10, 31, 53, 57,
-            63, 63, 42, 63, 63,
-            57, 53, 31, 10, 6
+            0, 0, 210, 0, 0,
+            60, 100, 310, 530, 570,
+            630, 630, 420, 630, 630,
+            570, 530, 310, 100, 60
         };
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
         /*
-         * Write the image to the asset file.
+         * Downsample the image to the desired final size.
          */
-        String assetPath = "saltire.png";
+        BufferedImage downsampledImage = Scalr.resize(image,
+                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
+                finalSize, Scalr.OP_ANTIALIAS);
+        /*
+         * Write the downsampled image to the asset file.
+         */
         String filePath = String.format("%s/%s", assetDirPath, assetPath);
         try {
-            Heart.writeImage(filePath, image);
+            Heart.writeImage(filePath, downsampledImage);
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
