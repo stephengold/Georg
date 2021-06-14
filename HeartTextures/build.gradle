@@ -21,34 +21,34 @@ task textures {
 }
 
 task cross(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakeCross'
+    mainClass = 'jme3utilities.debug.textures.MakeCross'
     outputs.files(["$buildDir/cross.png"])
 }
 task lozenge(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakeLozenge'
+    mainClass = 'jme3utilities.debug.textures.MakeLozenge'
     outputs.files(["$buildDir/lozenge.png"])
 }
 task mascle(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakeMascle'
+    mainClass = 'jme3utilities.debug.textures.MakeMascle'
     outputs.files(["$buildDir/mascle.png"])
 }
 task pin(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakePin'
+    mainClass = 'jme3utilities.debug.textures.MakePin'
     outputs.files(["$buildDir/pin.png"])
 }
 task ring(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakeRing'
+    mainClass = 'jme3utilities.debug.textures.MakeRing'
     outputs.files(["$buildDir/ring.png"])
 }
 task saltire(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakeSaltire'
+    mainClass = 'jme3utilities.debug.textures.MakeSaltire'
     outputs.files(["$buildDir/saltire.png"])
 }
 task solidCircle(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakeSolidCircle'
+    mainClass = 'jme3utilities.debug.textures.MakeSolidCircle'
     outputs.files(["$buildDir/solid circle.png"])
 }
 task square(type: JavaExec) {
-    main 'jme3utilities.debug.textures.MakeSquare'
+    mainClass = 'jme3utilities.debug.textures.MakeSquare'
     outputs.files(["$buildDir/square.png"])
 }
