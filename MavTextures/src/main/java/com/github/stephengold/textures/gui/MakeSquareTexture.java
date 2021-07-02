@@ -77,6 +77,7 @@ public class MakeSquareTexture {
     /**
      * Create a blank, color-buffered, opaque image for the texture map.
      *
+     * @param color the desired color (not null)
      * @return a new graphics context (not null)
      */
     protected Graphics2D createOpaque(Color color) {
