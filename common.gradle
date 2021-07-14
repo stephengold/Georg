@@ -22,7 +22,7 @@ gradle.projectsEvaluated {
 
 ext {
     // current versions of various libraries
-    heartVersion = '6.4.4'
+    heartVersion = '7.0.0'
     imgscalrVersion = '4.2'
     jmonkeyengineVersion = '3.4.0-stable'
 }
