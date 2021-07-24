@@ -6,4 +6,8 @@ subprojects {
     apply from: rootProject.file('common.gradle')
 }
 
-build.dependsOn(':HeartTextures:textures', ':MavTextures:textures')
+build.dependsOn(
+    ':FuzeCreekTextures:textures',
+    ':HeartTextures:textures',
+    ':MavTextures:textures'
+)

@@ -22,7 +22,8 @@ Complete source code (in Java) is provided under [a BSD license][license].
    + using Windows Command Prompt:  `.\gradlew textures`
 
 After a successful build,
-texture assets will be found in `HeartTextures/build` and `MavTextures/build`.
+texture assets will be found in `FuzeCreekTextures/build`,
+`HeartTextures/build`, and `MavTextures/build`.
 
 <a name="conventions"/>
 
