@@ -2,7 +2,7 @@
 //   for this project. This initialization is applied in the "build.gradle"
 //   of the root project.
 
-description = 'Generate texture assets for the Fuze Creek Project'
+description = 'Generates texture assets for the Fuze Creek Project.'
 ext {
     buildDir = 'build'
 }
@@ -16,7 +16,7 @@ dependencies {
 
 task textures {
     dependsOn = [ 'banks' ]
-    description 'Generate texture assets for the Fuze Creek Project'
+    description 'Generates texture assets for the Fuze Creek Project.'
 }
 
 task banks(type: JavaExec) {

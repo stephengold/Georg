@@ -2,7 +2,7 @@
 //   for this project. This initialization is applied in the "build.gradle"
 //   of the root project.
 
-description = 'Generate texture assets for More Advanced Vehicles'
+description = 'Generates texture assets for the More Advanced Vehicles Project.'
 ext {
     buildDir = 'build'
 }
@@ -19,7 +19,7 @@ task textures {
      'loadingTex', 'muteTex',
      'needleTex', 'pauseTex', 'powerTex', 'runTex',
      'singlestepTex', 'skidmarkTex', 'smokeTex', 'soundTex', 'steeringTex']
-    description 'Generate textures assets for More Advanced Vehicles'
+    description 'Generates texture assets for the More Advanced Vehicles Project.'
 }
 
 task compassTex(type: JavaExec) {
