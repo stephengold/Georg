@@ -78,10 +78,6 @@ public class MakeBanks {
         //logger.setLevel(Level.INFO);
         //Logger.getLogger(Heart.class.getName()).setLevel(Level.INFO);
         /*
-         * Instantiate the application.
-         */
-        MakeBanks application = new MakeBanks();
-        /*
          * Log the working directory.
          */
         String userDir = System.getProperty("user.dir");
