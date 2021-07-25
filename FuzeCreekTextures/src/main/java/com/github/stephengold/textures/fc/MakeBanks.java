@@ -121,16 +121,16 @@ public class MakeBanks {
         graphics.setColor(leftColor);
         graphics.fillRect(0, 0, textureSize, textureSize);
         /*
-         * Fill a pentagon on the right side with rightColor.
+         * Fill a polygon on the right side with rightColor.
          */
         int center = textureSize / 2;
         int downstream = pixelX(downstreamDeltaX);
         int upstream = pixelX(-upstreamDeltaX);
-        int right = textureSize - 1;
+        int right = textureSize;
         int[] xPoints = {right, right, upstream, center, downstream};
 
         downstream = 0;
-        upstream = textureSize - 1;
+        upstream = textureSize;
         int[] yPoints = {downstream, upstream, upstream, center, downstream};
 
         graphics.setColor(rightColor);
@@ -182,7 +182,7 @@ public class MakeBanks {
             case 0:
                 return textureSize / 2;
             case +1:
-                return textureSize - 1;
+                return textureSize;
             default:
                 throw new IllegalArgumentException("deltaX = " + deltaX);
         }
