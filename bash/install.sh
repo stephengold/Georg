@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -eu
 
 SDIR=/home/sgold/Git/Georg/FuzeCreekTextures/build
 DDIR=/home/sgold/Git/FuzeCreek/FC2D/src/main/resources/Textures/cells
