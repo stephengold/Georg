@@ -15,7 +15,7 @@ dependencies {
 // generate textures
 
 task textures {
-    dependsOn = [ 'banks' ]
+    dependsOn = [ 'banks', 'raft' ]
     description 'Generates texture assets for the Fuze Creek Project.'
 }
 
@@ -41,4 +41,9 @@ task banks(type: JavaExec) {
         "$buildDir/rightBankZeroPlus.png",
         "$buildDir/rightBankZeroZero.png"
         ])
+}
+
+task raft(type: JavaExec) {
+    mainClass = 'com.github.stephengold.textures.fc.MakeRaft'
+    outputs.files(["$buildDir/raft2.png"])
 }

@@ -4,7 +4,11 @@ set -e
 
 SDIR=/home/sgold/Git/Georg/FuzeCreekTextures/build
 DDIR=/home/sgold/Git/FuzeCreek/FC2D/src/main/resources/Textures/cells
-/bin/cp $SDIR/*.png $DDIR
+/bin/cp $SDIR/*Bank*.png $DDIR
+
+DDIR=/home/sgold/GitFuzeCreek/FC2D/src/main/resources/Textures
+/bin/cp $SDIR/raft*.png $DDIR
+
 
 SDIR=/home/sgold/Git/Georg/HeartTextures/build
 DDIR=/home/sgold/Git/Heart/HeartLibrary/src/main/resources/Textures/shapes
