@@ -88,7 +88,7 @@ public class MakeBanks {
          */
         float opacity = 1f;
         Color landColor = new Color(0.66f, 0.48f, 0.35f, opacity);
-        Color waterColor = new Color(0.73f, 0.73f, 1f, opacity);
+        Color waterColor = new Color(0f, 0f, 0.73f, opacity); // dark blue
         /*
          * Generate color image maps.
          */

@@ -101,7 +101,7 @@ public class MakeRaft {
         float opacity = 1f;
         Color floatColor = new Color(0f, 0.5f, 0f, opacity); // green
         Color floorColor = new Color(0.2f, 0.2f, 0.2f, opacity); // dark gray
-        Color waterColor = new Color(0.73f, 0.73f, 1f, opacity); // light blue
+        Color waterColor = new Color(0f, 0f, 0.73f, opacity); // dark blue
         /*
          * Generate the color image map.
          */
