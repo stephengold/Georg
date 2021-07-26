@@ -7,8 +7,8 @@ GIT=/home/sgold/Git
 GEORG=$GIT/Georg
 
 SDIR=$GEORG/FuzeCreekTextures/build
-DDIR=$GIT/FuzeCreek/FC2D/src/main/resources/Textures/cells
-$CP $SDIR/*Bank*.png $SDIR/rock.png  $DDIR
+DDIR=$GIT/tmp/FuzeCreek/FC2D/src/main/resources/Textures/cells
+$CP $SDIR/*Bank*.png $SDIR/mine.png $SDIR/rock.png  $DDIR
 
 DDIR=$GIT/FuzeCreek/FC2D/src/main/resources/Textures
 $CP $SDIR/raft*.png $DDIR
