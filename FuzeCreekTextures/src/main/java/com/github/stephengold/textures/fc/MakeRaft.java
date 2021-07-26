@@ -59,9 +59,9 @@ public class MakeRaft {
      */
     final public static float deltaS = 1f + root2;
     /**
-     * height of the texture map (pixels per side)
+     * height of the texture map (in pixels)
      */
-    final private static int textureHeight = 400;
+    final private static int textureHeight = 640;
     /**
      * message logger for this class
      */
