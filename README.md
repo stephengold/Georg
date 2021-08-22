@@ -16,16 +16,18 @@ Complete source code (in Java) is provided under
 
 ## How to build Georg from source
 
- 1. Install a Java Development Kit (JDK), if you don't already have one.
- 2. Download and extract the source code from GitHub:
+ 1. Install a [Java Development Kit (JDK)][openJDK],
+    if you don't already have one.
+ 2. Download and extract the Georg source code from GitHub:
    + using Git:
      + `git clone https://github.com/stephengold/Georg.git`
      + `cd Georg`
  3. Set the `JAVA_HOME` environment variable:
    + using Bash:  `export JAVA_HOME="` *path to your JDK* `"`
    + using Windows Command Prompt:  `set JAVA_HOME="` *path to your JDK* `"`
- 4. Run the Gradle wrapper:
-   + using Bash:  `./gradlew textures`
+   + using PowerShell: `$env:JAVA_HOME = '` *path to your JDK* `'`
+ 4. Run the [Gradle] wrapper:
+   + using Bash or PowerShell:  `./gradlew textures`
    + using Windows Command Prompt:  `.\gradlew textures`
 
 After a successful build,
@@ -47,6 +49,7 @@ The source code is compatible with JDK 7.
 [gradle]: https://gradle.org "Gradle Project"
 [heart]: https://github.com/stephengold/Heart "Heart Project"
 [imgscalr]: https://github.com/rkalla/imgscalr "ImgScalr Library"
+[imgur]: https://imgur.com/ "Imgur"
 [jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
 [license]: https://github.com/stephengold/Georg/blob/master/LICENSE "Georg license"
 [markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
@@ -54,6 +57,7 @@ The source code is compatible with JDK 7.
 [minie]: https://github.com/stephengold/Minie "Minie Project"
 [mint]: https://linuxmint.com "Linux Mint Project"
 [netbeans]: https://netbeans.org "NetBeans Project"
+[openJDK]: https://openjdk.java.net "OpenJDK Project"
 [utilities]: https://github.com/stephengold/jme3-utilities "Jme3-utilities Project"
 
 <a name="acks"/>
@@ -75,7 +79,7 @@ the following software:
 + the [Markdown] document-conversion tool
 + the [NetBeans] integrated development environment
 
-I am grateful to [Github] and Imgur
+I am grateful to [Github] and [Imgur]
 for providing free hosting for this project and many other open-source projects.
 
 I'm also grateful to my dear Holly, for keeping me sane.
