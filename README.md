@@ -1,7 +1,14 @@
 The Georg Project provides procedurally generated assets
 for use in JMonkeyEngine applications.
 
-Complete source code (in Java) is provided under [a BSD license][license].
+It contains 3 sub-projects:
+
+ 1. FuzeCreekTextures: generate textures for [the FuzeCreek project][fuzecreek]
+ 2. HeartTextures: generate textures for [the Heart project][heart]
+ 3. MavTextures: generate textures for [the More Advanced Vehicles project][mav]
+
+Complete source code (in Java) is provided under
+[a 3-clause BSD license][license].
 
 <img height="450" src="https://i.imgur.com/4B5J8jU.png">
 
@@ -34,6 +41,7 @@ The source code is compatible with JDK 7.
 [ant]: https://ant.apache.org "Apache Ant Project"
 [bsd3]: https://opensource.org/licenses/BSD-3-Clause "3-Clause BSD License"
 [firefox]: https://www.mozilla.org/en-US/firefox "Firefox"
+[fuzecreek]: https://github.com/stephengold/FuzeCreek "Fuze Creek Project"
 [git]: https://git-scm.com "Git"
 [github]: https://github.com "GitHub"
 [gradle]: https://gradle.org "Gradle Project"
@@ -42,6 +50,7 @@ The source code is compatible with JDK 7.
 [jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
 [license]: https://github.com/stephengold/Georg/blob/master/LICENSE "Georg license"
 [markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
+[mav]: https://github.com/stephengold/jme-vehicles "More Advanced Vehicles Project"
 [minie]: https://github.com/stephengold/Minie "Minie Project"
 [mint]: https://linuxmint.com "Linux Mint Project"
 [netbeans]: https://netbeans.org "NetBeans Project"
