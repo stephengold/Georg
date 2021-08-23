@@ -72,7 +72,7 @@ the following software:
 + the [Git] revision-control system and GitK commit viewer
 + the [Gradle] build tool
 + the [ImgScalr] Library
-+ the Java compiler, standard doclet, and runtime environment
++ the Java compiler, standard doclet, and virtual machine
 + [jMonkeyEngine][jme] and the jME3 Software Development Kit
 + the [Linux Mint][mint] operating system
 + LWJGL, the Lightweight Java Game Library
