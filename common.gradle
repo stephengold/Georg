@@ -1,8 +1,14 @@
-// Gradle settings and tasks common to all subprojects
+// Gradle settings and tasks common to all Georg subprojects
 
 apply plugin: 'java'
 
 group = 'com.github.stephengold'
+
+ext { // current versions of various libraries:
+    heartVersion = '7.0.0'
+    imgscalrVersion = '4.2'
+    jmonkeyengineVersion = '3.4.0-stable'
+}
 
 sourceCompatibility = '1.7'
 targetCompatibility = '1.7'
@@ -18,13 +24,6 @@ gradle.projectsEvaluated {
         classpath sourceSets.main.runtimeClasspath
         enableAssertions true
     }
-}
-
-ext {
-    // current versions of various libraries
-    heartVersion = '7.0.0'
-    imgscalrVersion = '4.2'
-    jmonkeyengineVersion = '3.4.0-stable'
 }
 
 repositories {
