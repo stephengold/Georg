@@ -5,7 +5,7 @@ apply plugin: 'java'
 group = 'com.github.stephengold'
 
 ext { // current versions of various libraries:
-    heartVersion = '7.0.0'
+    heartVersion = '7.1.0'
     imgscalrVersion = '4.2'
     jmonkeyengineVersion = '3.4.0-stable'
 }
