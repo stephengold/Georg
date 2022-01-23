@@ -8,8 +8,8 @@ ext {
 }
 
 dependencies {
-    implementation 'com.github.stephengold:Heart:' + heartVersion
-    implementation 'org.imgscalr:imgscalr-lib:' + imgscalrVersion
+    implementation heartCoordinates
+    implementation imgscalrCoordinates
 }
 
 // generate textures

@@ -2,10 +2,9 @@
 
 apply plugin: 'java'
 
-ext { // current versions of various libraries:
-    heartVersion = '7.2.0'
-    imgscalrVersion = '4.2'
-    jmonkeyengineVersion = '3.5.0-stable'
+ext { // coordinates of commonly-used libraries:
+    heartCoordinates = 'com.github.stephengold:Heart:7.2.0'
+    imgscalrCoordinates = 'org.imgscalr:imgscalr-lib:4.2'
 }
 
 sourceCompatibility = '1.7'
