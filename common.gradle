@@ -3,7 +3,7 @@
 apply plugin: 'java'
 
 ext { // current versions of various libraries:
-    heartVersion = '7.1.0'
+    heartVersion = '7.2.0'
     imgscalrVersion = '4.2'
     jmonkeyengineVersion = '3.5.0-stable'
 }
