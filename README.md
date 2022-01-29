@@ -12,7 +12,7 @@ Complete source code (in Java) is provided under
 
 <img height="450" src="https://i.imgur.com/4B5J8jU.png">
 
-<a name="build"/>
+<a name="build"></a>
 
 ## How to build Georg from source
 
@@ -34,7 +34,7 @@ After a successful build,
 texture assets will be found in `FuzeCreekTextures/build`,
 `HeartTextures/build`, and `MavTextures/build`.
 
-<a name="conventions"/>
+<a name="conventions"></a>
 
 ## Conventions
 
@@ -60,7 +60,7 @@ The source code is compatible with JDK 7.
 [openJDK]: https://openjdk.java.net "OpenJDK Project"
 [utilities]: https://github.com/stephengold/jme3-utilities "Jme3-utilities Project"
 
-<a name="acks"/>
+<a name="acks"></a>
 
 ## Acknowledgments
 
