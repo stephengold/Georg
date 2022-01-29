@@ -40,25 +40,6 @@ texture assets will be found in `FuzeCreekTextures/build`,
 
 The source code is compatible with JDK 7.
 
-[ant]: https://ant.apache.org "Apache Ant Project"
-[bsd3]: https://opensource.org/licenses/BSD-3-Clause "3-Clause BSD License"
-[firefox]: https://www.mozilla.org/en-US/firefox "Firefox"
-[fuzecreek]: https://github.com/stephengold/FuzeCreek "Fuze Creek Project"
-[git]: https://git-scm.com "Git"
-[github]: https://github.com "GitHub"
-[gradle]: https://gradle.org "Gradle Project"
-[heart]: https://github.com/stephengold/Heart "Heart Project"
-[imgscalr]: https://github.com/rkalla/imgscalr "ImgScalr Library"
-[imgur]: https://imgur.com/ "Imgur"
-[jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
-[license]: https://github.com/stephengold/Georg/blob/master/LICENSE "Georg license"
-[markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
-[mav]: https://github.com/stephengold/jme-vehicles "More Advanced Vehicles Project"
-[minie]: https://github.com/stephengold/Minie "Minie Project"
-[mint]: https://linuxmint.com "Linux Mint Project"
-[netbeans]: https://netbeans.org "NetBeans Project"
-[openJDK]: https://openjdk.java.net "OpenJDK Project"
-[utilities]: https://github.com/stephengold/jme3-utilities "Jme3-utilities Project"
 
 <a name="acks"></a>
 
@@ -86,3 +67,24 @@ I'm also grateful to my dear Holly, for keeping me sane.
 
 If I've misattributed anything or left anyone out, please let me know so I can
 correct the situation: sgold@sonic.net
+
+
+[ant]: https://ant.apache.org "Apache Ant Project"
+[bsd3]: https://opensource.org/licenses/BSD-3-Clause "3-Clause BSD License"
+[firefox]: https://www.mozilla.org/en-US/firefox "Firefox"
+[fuzecreek]: https://github.com/stephengold/FuzeCreek "Fuze Creek Project"
+[git]: https://git-scm.com "Git"
+[github]: https://github.com "GitHub"
+[gradle]: https://gradle.org "Gradle Project"
+[heart]: https://github.com/stephengold/Heart "Heart Project"
+[imgscalr]: https://github.com/rkalla/imgscalr "ImgScalr Library"
+[imgur]: https://imgur.com/ "Imgur"
+[jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
+[license]: https://github.com/stephengold/Georg/blob/master/LICENSE "Georg license"
+[markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
+[mav]: https://github.com/stephengold/jme-vehicles "More Advanced Vehicles Project"
+[minie]: https://github.com/stephengold/Minie "Minie Project"
+[mint]: https://linuxmint.com "Linux Mint Project"
+[netbeans]: https://netbeans.org "NetBeans Project"
+[openJDK]: https://openjdk.java.net "OpenJDK Project"
+[utilities]: https://github.com/stephengold/jme3-utilities "Jme3-utilities Project"
