@@ -16,19 +16,19 @@ Complete source code (in Java) is provided under
 
 ## How to build Georg from source
 
- 1. Install a [Java Development Kit (JDK)][openJDK],
-    if you don't already have one.
- 2. Download and extract the Georg source code from GitHub:
-   + using Git:
-     + `git clone https://github.com/stephengold/Georg.git`
-     + `cd Georg`
- 3. Set the `JAVA_HOME` environment variable:
-   + using Bash:  `export JAVA_HOME="` *path to your JDK* `"`
-   + using Windows Command Prompt:  `set JAVA_HOME="` *path to your JDK* `"`
-   + using PowerShell: `$env:JAVA_HOME = '` *path to your JDK* `'`
- 4. Run the [Gradle] wrapper:
-   + using Bash or PowerShell:  `./gradlew textures`
-   + using Windows Command Prompt:  `.\gradlew textures`
+1. Install a [Java Development Kit (JDK)][openJDK],
+   if you don't already have one.
+2. Download and extract the Georg source code from GitHub:
+  + using Git:
+    + `git clone https://github.com/stephengold/Georg.git`
+    + `cd Georg`
+3. Set the `JAVA_HOME` environment variable:
+  + using Bash:  `export JAVA_HOME="` *path to your JDK* `"`
+  + using Windows Command Prompt:  `set JAVA_HOME="` *path to your JDK* `"`
+  + using PowerShell: `$env:JAVA_HOME = '` *path to your JDK* `'`
+4. Run the [Gradle] wrapper:
+  + using Bash or PowerShell: `./gradlew textures`
+  + using Windows Command Prompt: `.\gradlew textures`
 
 After a successful build,
 texture assets will be found in `FuzeCreekTextures/build`,
