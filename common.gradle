@@ -3,11 +3,11 @@
 apply plugin: 'java'
 
 ext { // coordinates of commonly-used libraries:
-    heartCoordinates = 'com.github.stephengold:Heart:7.2.0'
+    heartCoordinates = 'com.github.stephengold:Heart:7.3.0'
     imgscalrCoordinates = 'org.imgscalr:imgscalr-lib:4.2'
 }
 
-sourceCompatibility = '1.7'
+sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_8
 
 tasks.withType(JavaCompile) { // Java compile-time options:
