@@ -61,11 +61,12 @@ the following software:
 + the [NetBeans] integrated development environment
 
 I am grateful to [Github] and [Imgur]
-for providing free hosting for this project and many other open-source projects.
+for providing free hosting for this project
+ and many other open-source projects.
 
 I'm also grateful to my dear Holly, for keeping me sane.
 
-If I've misattributed anything or left anyone out, please let me know so I can
+If I've misattributed anything or left anyone out, please let me know, so I can
 correct the situation: sgold@sonic.net
 
 
