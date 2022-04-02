@@ -13,12 +13,12 @@ dependencies {
 
 // generate textures
 
-task textures {
+tasks.register('textures') {
     dependsOn = [ 'banks', 'mine', 'raft', 'rock' ]
     description 'Generates texture assets for the Fuze Creek Project.'
 }
 
-task banks(type: JavaExec) {
+tasks.register('banks', JavaExec) {
     mainClass = 'com.github.stephengold.textures.fc.MakeBanks'
     outputs.files([
         "$buildDir/leftBankMinusMinus.png",
@@ -42,17 +42,17 @@ task banks(type: JavaExec) {
         ])
 }
 
-task mine(type: JavaExec) {
+tasks.register('mine', JavaExec) {
     mainClass = 'com.github.stephengold.textures.fc.MakeMine'
     outputs.files(["$buildDir/mine.png"])
 }
 
-task raft(type: JavaExec) {
+tasks.register('raft', JavaExec) {
     mainClass = 'com.github.stephengold.textures.fc.MakeRaft'
     outputs.files(["$buildDir/raft2.png"])
 }
 
-task rock(type: JavaExec) {
+tasks.register('rock', JavaExec) {
     mainClass = 'com.github.stephengold.textures.fc.MakeRock'
     outputs.files(["$buildDir/rock.png"])
 }

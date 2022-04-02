@@ -13,41 +13,41 @@ dependencies {
 
 // generate textures
 
-task textures {
+tasks.register('textures') {
     dependsOn = ['cross', 'lozenge', 'mascle', 'pin', 'ring',
         'saltire', 'solidCircle', 'square']
     description 'Generates texture assets included in the Heart Library.'
 }
 
-task cross(type: JavaExec) {
+tasks.register('cross', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakeCross'
     outputs.files(["$buildDir/cross.png"])
 }
-task lozenge(type: JavaExec) {
+tasks.register('lozenge', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakeLozenge'
     outputs.files(["$buildDir/lozenge.png"])
 }
-task mascle(type: JavaExec) {
+tasks.register('mascle', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakeMascle'
     outputs.files(["$buildDir/mascle.png"])
 }
-task pin(type: JavaExec) {
+tasks.register('pin', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakePin'
     outputs.files(["$buildDir/pin.png"])
 }
-task ring(type: JavaExec) {
+tasks.register('ring', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakeRing'
     outputs.files(["$buildDir/ring.png"])
 }
-task saltire(type: JavaExec) {
+tasks.register('saltire', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakeSaltire'
     outputs.files(["$buildDir/saltire.png"])
 }
-task solidCircle(type: JavaExec) {
+tasks.register('solidCircle', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakeSolidCircle'
     outputs.files(["$buildDir/solid circle.png"])
 }
-task square(type: JavaExec) {
+tasks.register('square', JavaExec) {
     mainClass = 'jme3utilities.debug.textures.MakeSquare'
     outputs.files(["$buildDir/square.png"])
 }

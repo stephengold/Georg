@@ -13,7 +13,7 @@ dependencies {
 
 // generate textures
 
-task textures {
+tasks.register('textures') {
     dependsOn = ['compassTex', 'dialTex', 'hornTex', 'leftTriangleTex',
      'loadingTex', 'muteTex',
      'needleTex', 'pauseTex', 'powerTex', 'runTex',
@@ -21,63 +21,63 @@ task textures {
     description 'Generates texture assets for the More Advanced Vehicles Project.'
 }
 
-task compassTex(type: JavaExec) {
+tasks.register('compassTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeCompass'
     outputs.files(["$buildDir/compass.png"])
 }
-task dialTex(type: JavaExec) {
+tasks.register('dialTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeDials'
     outputs.files(["$buildDir/speedo_bg_2.png", "$buildDir/tachometer_bg.png"])
 }
-task hornTex(type: JavaExec) {
+tasks.register('hornTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeHorn'
     outputs.files(["$buildDir/horn-silent.png", "$buildDir/horn-sound.png"])
 }
-task leftTriangleTex(type: JavaExec) {
+tasks.register('leftTriangleTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeLeftTriangle'
     outputs.files(["$buildDir/left-triangle.png"])
 }
-task loadingTex(type: JavaExec) {
+tasks.register('loadingTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeLoading'
     outputs.files(["$buildDir/loading.png"])
 }
-task muteTex(type: JavaExec) {
+tasks.register('muteTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeMute'
     outputs.files(["$buildDir/mute.png"])
 }
-task needleTex(type: JavaExec) {
+tasks.register('needleTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeNeedle'
     outputs.files(["$buildDir/speedo_needle_2.png"])
 }
-task pauseTex(type: JavaExec) {
+tasks.register('pauseTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakePause'
     outputs.files(["$buildDir/pause.png"])
 }
-task powerTex(type: JavaExec) {
+tasks.register('powerTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakePower'
     outputs.files(["$buildDir/power-off.png", "$buildDir/power-on.png"])
 }
-task runTex(type: JavaExec) {
+tasks.register('runTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeRun'
     outputs.files(["$buildDir/run.png"])
 }
-task singlestepTex(type: JavaExec) {
+tasks.register('singlestepTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeSingleStep'
     outputs.files(["$buildDir/single-step.png"])
 }
-task skidmarkTex(type: JavaExec) {
+tasks.register('skidmarkTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeSkidmark'
     outputs.files(["$buildDir/skidmark.png"])
 }
-task smokeTex(type: JavaExec) {
+tasks.register('smokeTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeSmoke'
     outputs.files(["$buildDir/smoke.png"])
 }
-task soundTex(type: JavaExec) {
+tasks.register('soundTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeSound'
     outputs.files(["$buildDir/sound.png"])
 }
-task steeringTex(type: JavaExec) {
+tasks.register('steeringTex', JavaExec) {
     mainClass = 'com.github.stephengold.textures.gui.MakeSteering'
     outputs.files(["$buildDir/steering.png"])
 }
