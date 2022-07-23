@@ -1,5 +1,6 @@
 // Gradle settings and tasks common to all Georg subprojects
 
+apply plugin: 'checkstyle'
 apply plugin: 'java'
 
 ext { // module coordinates of dependencies:
