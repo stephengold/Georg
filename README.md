@@ -16,7 +16,7 @@ Complete source code (in Java) is provided under
 
 ## How to build Georg from source
 
-1. Install a [Java Development Kit (JDK)][openJDK],
+1. Install a [Java Development Kit (JDK)][adoptium],
    if you don't already have one.
 2. Download and extract the Georg source code from GitHub:
   + using Git:
@@ -70,6 +70,7 @@ If I've misattributed anything or left anyone out, please let me know, so I can
 correct the situation: sgold@sonic.net
 
 
+[adoptium]: https://adoptium.net/releases.html "Adoptium Project"
 [ant]: https://ant.apache.org "Apache Ant Project"
 [bsd3]: https://opensource.org/licenses/BSD-3-Clause "3-Clause BSD License"
 [firefox]: https://www.mozilla.org/en-US/firefox "Firefox"
@@ -87,5 +88,4 @@ correct the situation: sgold@sonic.net
 [minie]: https://github.com/stephengold/Minie "Minie Project"
 [mint]: https://linuxmint.com "Linux Mint Project"
 [netbeans]: https://netbeans.org "NetBeans Project"
-[openJDK]: https://openjdk.java.net "OpenJDK Project"
 [utilities]: https://github.com/stephengold/jme3-utilities "Jme3-utilities Project"
