@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2018-2021, Stephen Gold
+ Copyright (c) 2018-2022, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -111,8 +111,12 @@ public class MakeCross {
         Color white = new Color(brightness, brightness, brightness, opacity);
         graphics.setColor(white);
 
-        int[] xPoints = {250, 380, 380, 630, 630, 380, 380, 250, 250, 0, 0, 250};
-        int[] yPoints = {0, 0, 250, 250, 380, 380, 630, 630, 380, 380, 250, 250};
+        int[] xPoints = {
+            250, 380, 380, 630, 630, 380, 380, 250, 250, 0, 0, 250
+        };
+        int[] yPoints = {
+            0, 0, 250, 250, 380, 380, 630, 630, 380, 380, 250, 250
+        };
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
         /*
