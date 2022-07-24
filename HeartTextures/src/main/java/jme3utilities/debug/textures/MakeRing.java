@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2018-2021, Stephen Gold
+ Copyright (c) 2018-2022, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -164,7 +164,7 @@ public class MakeRing {
         int[] xPoints = new int[numPoints];
         int[] yPoints = new int[numPoints];
 
-        for (int i = 0; i < samplesPerArc; i++) {
+        for (int i = 0; i < samplesPerArc; ++i) {
             double theta = startTheta + i * thetaStep;
             double sin = Math.sin(theta);
             double cos = Math.cos(theta);

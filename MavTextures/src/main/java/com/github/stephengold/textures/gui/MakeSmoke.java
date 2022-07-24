@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2021, Stephen Gold
+ Copyright (c) 2021-2022, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -98,8 +98,8 @@ public class MakeSmoke extends MakeSquareTexture {
         /*
          * Set the opacity of each pixel.
          */
-        for (int x = 0; x < textureSize; x++) {
-            for (int y = 0; y < textureSize; y++) {
+        for (int x = 0; x < textureSize; ++x) {
+            for (int y = 0; y < textureSize; ++y) {
                 float xx = (2 * x - textureSize) / (float) textureSize;
                 float yy = (2 * y - textureSize) / (float) textureSize;
                 float alpha = 1f - MyMath.hypotenuse(xx, yy);
