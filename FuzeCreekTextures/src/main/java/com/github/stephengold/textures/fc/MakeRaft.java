@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020-2021, Stephen Gold
+ Copyright (c) 2020-2022, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -26,7 +26,6 @@
  */
 package com.github.stephengold.textures.fc;
 
-import com.jme3.math.FastMath;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -51,13 +50,9 @@ public class MakeRaft {
     // constants and loggers
 
     /**
-     * square root of 2
-     */
-    final public static float root2 = FastMath.sqrt(2f);
-    /**
      * "silver ratio"
      */
-    final public static float deltaS = 1f + root2;
+    final public static float deltaS = 1f + MyMath.root2;
     /**
      * height of the texture map (in pixels)
      */
