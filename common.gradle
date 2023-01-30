@@ -4,7 +4,7 @@ apply plugin: 'checkstyle'
 apply plugin: 'java'
 
 ext { // module coordinates of dependencies:
-    heartCoordinates = 'com.github.stephengold:Heart:8.2.0'
+    heartCoordinates = 'com.github.stephengold:Heart:8.3.0+for36'
     imgscalrCoordinates = 'org.imgscalr:imgscalr-lib:4.2'
 }
 
@@ -33,4 +33,5 @@ tasks.withType(JavaExec) { // Java runtime options:
 repositories {
     //mavenLocal() // to find local SNAPSHOTs of libraries
     mavenCentral()
+    //maven { url 'https://s01.oss.sonatype.org/content/groups/staging' } // to find libraries staged but not yet released
 }
