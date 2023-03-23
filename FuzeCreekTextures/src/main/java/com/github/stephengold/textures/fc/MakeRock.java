@@ -60,6 +60,14 @@ class MakeRock {
      */
     final private static String assetDirPath = "build";
     // *************************************************************************
+    // constructors
+
+    /**
+     * A private constructor to inhibit instantiation of this class.
+     */
+    private MakeRock() {
+    }
+    // *************************************************************************
     // new methods exposed
 
     /**

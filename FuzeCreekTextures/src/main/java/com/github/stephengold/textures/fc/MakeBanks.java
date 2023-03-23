@@ -60,6 +60,14 @@ class MakeBanks {
      */
     final private static String assetDirPath = "build";
     // *************************************************************************
+    // constructors
+
+    /**
+     * A private constructor to inhibit instantiation of this class.
+     */
+    private MakeBanks() {
+    }
+    // *************************************************************************
     // new methods exposed
 
     /**
