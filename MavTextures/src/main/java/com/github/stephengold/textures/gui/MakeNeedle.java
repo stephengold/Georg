@@ -42,7 +42,7 @@ import org.imgscalr.Scalr;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeNeedle {
+final class MakeNeedle {
     // *************************************************************************
     // constants and loggers
 

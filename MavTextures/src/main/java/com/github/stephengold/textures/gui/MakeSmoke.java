@@ -39,7 +39,7 @@ import jme3utilities.math.MyMath;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeSmoke extends MakeSquareTexture {
+final class MakeSmoke extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 

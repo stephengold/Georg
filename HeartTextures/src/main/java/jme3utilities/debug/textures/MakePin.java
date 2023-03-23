@@ -41,7 +41,7 @@ import org.imgscalr.Scalr;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakePin {
+final class MakePin {
     // *************************************************************************
     // constants and loggers
 

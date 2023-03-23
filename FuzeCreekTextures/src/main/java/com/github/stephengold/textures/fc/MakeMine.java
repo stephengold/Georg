@@ -45,7 +45,7 @@ import org.imgscalr.Scalr;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeMine {
+final class MakeMine {
     // *************************************************************************
     // constants and loggers
 

@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020, Stephen Gold
+ Copyright (c) 2020-2023, Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -34,7 +34,7 @@ import java.util.logging.Logger;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class TexUtils {
+final class TexUtils {
     // *************************************************************************
     // constants and loggers
 

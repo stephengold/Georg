@@ -38,7 +38,7 @@ import jme3utilities.MyString;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeMute extends MakeSquareTexture {
+final class MakeMute extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 

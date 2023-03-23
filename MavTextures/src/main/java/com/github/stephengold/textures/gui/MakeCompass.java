@@ -43,7 +43,7 @@ import org.imgscalr.Scalr;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeCompass {
+final class MakeCompass {
     // *************************************************************************
     // constants and loggers
 

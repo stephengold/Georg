@@ -39,7 +39,7 @@ import jme3utilities.MyString;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeSteering extends MakeSquareTexture {
+final class MakeSteering extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 

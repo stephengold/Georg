@@ -39,7 +39,7 @@ import jme3utilities.MyString;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeHorn extends MakeSquareTexture {
+final class MakeHorn extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 

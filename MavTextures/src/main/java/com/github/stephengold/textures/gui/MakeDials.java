@@ -39,7 +39,7 @@ import jme3utilities.MyString;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeDials extends MakeSquareTexture {
+final class MakeDials extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 

@@ -38,7 +38,7 @@ import jme3utilities.MyString;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeLoading extends MakeSquareTexture {
+final class MakeLoading extends MakeSquareTexture {
     // *************************************************************************
     // constants and loggers
 

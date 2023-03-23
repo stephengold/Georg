@@ -41,7 +41,7 @@ import org.imgscalr.Scalr;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeLozenge {
+final class MakeLozenge {
     // *************************************************************************
     // constants and loggers
 

@@ -41,7 +41,7 @@ import org.imgscalr.Scalr;
  *
  * @author Stephen Gold sgold@sonic.net
  */
-class MakeBanks {
+final class MakeBanks {
     // *************************************************************************
     // constants and loggers
 
