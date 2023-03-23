@@ -31,6 +31,13 @@
         <property name="fileExtensions" value="java"/>
         <property name="max" value="80"/>
         <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+
+    <!-- Checks for headers                              -->
+    <!-- See https://checkstyle.org/config_header.html   -->
+    <module name="Header">
+        <property name="headerFile" value="${config_loc}/java-header"/>
+        <property name="ignoreLines" value="2"/>
+        <property name="fileExtensions" value="java"/>
     </module>
 
     <module name="TreeWalker">
