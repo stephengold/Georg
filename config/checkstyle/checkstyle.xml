@@ -80,7 +80,10 @@
         <module name="EmptyBlock">
             <property name="option" value="TEXT"/>
             <property name="tokens"
-                      value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH"/>
+                      value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH,
+                    ARRAY_INIT, INSTANCE_INIT, LITERAL_CASE, LITERAL_CATCH,
+                    LITERAL_DEFAULT, LITERAL_DO, LITERAL_FOR,
+                    LITERAL_SYNCHRONIZED, LITERAL_WHILE, STATIC_INIT"/>
         </module>
         <module name="NeedBraces">
             <property name="tokens"
@@ -343,14 +346,14 @@
         </module>
         <module name="JavadocMethod">
             <property name="allowMissingParamTags" value="true"/>
-            <property name="allowMissingReturnTag" value="true"/>
-            <property name="allowedAnnotations" value="Override, Test"/>
+            <property name="allowMissingReturnTag" value="false"/>
+            <property name="allowedAnnotations" value=""/>
             <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF, COMPACT_CTOR_DEF"/>
         </module>
         <module name="MissingJavadocMethod">
             <property name="scope" value="public"/>
-            <property name="minLineCount" value="2"/>
-            <property name="allowedAnnotations" value="Override, Test"/>
+            <property name="minLineCount" value="-1"/>
+            <property name="allowedAnnotations" value=""/>
             <property name="tokens" value="METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF,
                                    COMPACT_CTOR_DEF"/>
         </module>
@@ -378,7 +381,9 @@
             <property name="exceptionVariableName" value="expected"/>
         </module>
         <module name="CommentsIndentation">
-            <property name="tokens" value="BLOCK_COMMENT_BEGIN"/>
+            <property name="tokens"
+                      value="SINGLE_LINE_COMMENT, BLOCK_COMMENT_BEGIN"/>
+        </module>
 
         <!-- Checks for size violations                   -->
         <!-- See https://checkstyle.org/config_sizes.html -->
