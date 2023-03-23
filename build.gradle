@@ -11,3 +11,9 @@ build.dependsOn(
     ':HeartTextures:textures',
     ':MavTextures:textures'
 )
+
+tasks.register('checkstyle') {
+    dependsOn ':FuzeCreekTextures:checkstyleMain', \
+        ':HeartTextures:checkstyleMain', ':MavTextures:checkstyleMain'
+    description 'Checks the style of all Java sourcecode.'
+}
