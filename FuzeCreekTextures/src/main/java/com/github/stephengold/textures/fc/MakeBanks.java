@@ -108,8 +108,8 @@ final class MakeBanks {
     private static void makeBank(String leftRight, Color leftColor,
             Color rightColor, int upstreamDeltaX, int downstreamDeltaX) {
         // Create a blank, color buffered image for the texture map.
-        BufferedImage image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_4BYTE_ABGR);
+        BufferedImage image = new BufferedImage(
+                textureSize, textureSize, BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
 
         // Start with all pixels leftColor.
@@ -132,9 +132,9 @@ final class MakeBanks {
         graphics.fillPolygon(xPoints, yPoints, numPoints);
 
         // Downsample the image (by 10x) to the desired final size.
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
-                finalSize, Scalr.OP_ANTIALIAS);
+        BufferedImage downsampledImage = Scalr.resize(
+                image, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC,
+                finalSize, finalSize, Scalr.OP_ANTIALIAS);
 
         // Write the downsampled image to the asset file.
         String upstreamMpz = mpz(upstreamDeltaX);

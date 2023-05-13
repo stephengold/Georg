@@ -105,10 +105,9 @@ final class MakeRock {
      */
     private static void makeRock(Color rockColor1, Color rockColor2,
             Color rockColor3, Color wakeColor, Color waterColor) {
-
         // Create a blank, color buffered image for the texture map.
-        BufferedImage image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_4BYTE_ABGR);
+        BufferedImage image = new BufferedImage(
+                textureSize, textureSize, BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
 
         // Start with all pixels waterColor.
@@ -149,9 +148,9 @@ final class MakeRock {
         graphics.fillPolygon(xPoints3, yPoints3, numPoints3);
 
         // Downsample the image (by 10x) to the desired final size.
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
-                finalSize, Scalr.OP_ANTIALIAS);
+        BufferedImage downsampledImage = Scalr.resize(
+                image, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC,
+                finalSize, finalSize, Scalr.OP_ANTIALIAS);
 
         // Write the downsampled image to the asset file.
         String filePath

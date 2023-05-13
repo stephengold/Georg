@@ -104,11 +104,11 @@ final class MakeMine {
      * Generate a color image map to visualize a naval mine protruding from the
      * water.
      */
-    private static void makeMine(Color mineColor, Color wakeColor,
-            Color waterColor) {
+    private static void makeMine(
+            Color mineColor, Color wakeColor, Color waterColor) {
         // Create a blank, color buffered image for the texture map.
-        BufferedImage image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_4BYTE_ABGR);
+        BufferedImage image = new BufferedImage(
+                textureSize, textureSize, BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
 
         // Start with all pixels waterColor.
@@ -171,9 +171,9 @@ final class MakeMine {
         graphics.fillPolygon(xPointsHorns2, yPointsHorns2, numPointsHorns2);
 
         // Downsample the image (by 10x) to the desired final size.
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
-                finalSize, Scalr.OP_ANTIALIAS);
+        BufferedImage downsampledImage = Scalr.resize(
+                image, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC,
+                finalSize, finalSize, Scalr.OP_ANTIALIAS);
 
         // Write the downsampled image to the asset file.
         String filePath = String.format("%s/mine.png", assetDirPath);

@@ -111,8 +111,8 @@ final class MakeRaft {
             Color floorColor, Color waterColor) {
         // Create a blank, color buffered image for the texture map.
         int textureWidth = raftWidth * textureHeight;
-        BufferedImage image = new BufferedImage(textureWidth, textureHeight,
-                BufferedImage.TYPE_4BYTE_ABGR);
+        BufferedImage image = new BufferedImage(
+                textureWidth, textureHeight, BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
 
         // Start with all pixels waterColor.
@@ -164,9 +164,9 @@ final class MakeRaft {
         // Downsample the image (by 10x) to the desired final size.
         int finalHeight = textureHeight / 10;
         int finalWidth = textureWidth / 10;
-        BufferedImage downsampledImage = Scalr.resize(image,
-                Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalWidth,
-                finalHeight, Scalr.OP_ANTIALIAS);
+        BufferedImage downsampledImage = Scalr.resize(
+                image, Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC,
+                finalWidth, finalHeight, Scalr.OP_ANTIALIAS);
 
         // Write the downsampled image to the asset file.
         String filePath
