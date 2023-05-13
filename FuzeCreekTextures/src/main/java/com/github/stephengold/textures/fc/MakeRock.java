@@ -76,24 +76,15 @@ final class MakeRock {
      * @param arguments array of command-line arguments (not null)
      */
     public static void main(String[] arguments) {
-        /*
-         * Mute the chatty loggers found in some imported packages.
-         */
+        // Mute the chatty loggers found in some imported packages.
         Heart.setLoggingLevels(Level.WARNING);
-        /*
-         * Set the logging level for this class and also for writeImage().
-         */
-        //logger.setLevel(Level.INFO);
-        //Logger.getLogger(Heart.class.getName()).setLevel(Level.INFO);
-        /*
-         * Log the working directory.
-         */
+
+        // Log the working directory.
         String userDir = System.getProperty("user.dir");
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
-        /*
-         * Define colors.
-         */
+
+        // Define colors.
         float opacity = 1f;
         Color wakeColor = new Color(0.24f, 0.24f, 0.73f, opacity); // light blue
         Color waterColor = new Color(0f, 0f, 0.73f, opacity); // dark blue
@@ -101,9 +92,8 @@ final class MakeRock {
         Color color1 = new Color(bright, bright, bright, opacity); // white
         Color landColor = new Color(0.66f, 0.48f, 0.35f, opacity);
         Color color3 = new Color(0.33f, 0.24f, 0.17f, opacity);
-        /*
-         * Generate the color image map.
-         */
+
+        // Generate the color image map.
         makeRock(color1, landColor, color3, wakeColor, waterColor);
     }
     // *************************************************************************
@@ -115,20 +105,17 @@ final class MakeRock {
      */
     private static void makeRock(Color rockColor1, Color rockColor2,
             Color rockColor3, Color wakeColor, Color waterColor) {
-        /*
-         * Create a blank, color buffered image for the texture map.
-         */
+
+        // Create a blank, color buffered image for the texture map.
         BufferedImage image = new BufferedImage(textureSize, textureSize,
                 BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
-        /*
-         * Start with all pixels waterColor.
-         */
+
+        // Start with all pixels waterColor.
         graphics.setColor(waterColor);
         graphics.fillRect(0, 0, textureSize, textureSize);
-        /*
-         * Fill a kite-shaped "wake" with wakeColor.
-         */
+
+        // Fill a kite-shaped "wake" with wakeColor.
         int center = textureSize / 2;
         int p1 = textureSize / 5;
         int p2 = textureSize - p1;
@@ -137,9 +124,8 @@ final class MakeRock {
         graphics.setColor(wakeColor);
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
-        /*
-         * Fill a small square with rockColor2.
-         */
+
+        // Fill a small square with rockColor2.
         int low = textureSize / 4;
         int high = textureSize - low;
         int[] xPoints2 = {center, high, center, low};
@@ -147,31 +133,27 @@ final class MakeRock {
         graphics.setColor(rockColor2);
         int numPoints2 = xPoints2.length;
         graphics.fillPolygon(xPoints2, yPoints2, numPoints2);
-        /*
-         * Fill the upper-right corner with rockColor1.
-         */
+
+        // Fill the upper-right corner with rockColor1.
         int[] xPoints1 = {center, center, high};
         int[] yPoints1 = {center, high, center};
         graphics.setColor(rockColor1);
         int numPoints1 = xPoints1.length;
         graphics.fillPolygon(xPoints1, yPoints1, numPoints1);
-        /*
-         * Fill the lower-left corner with rockColor3.
-         */
+
+        // Fill the lower-left corner with rockColor3.
         int[] xPoints3 = {center, center, low};
         int[] yPoints3 = {center, low, center};
         graphics.setColor(rockColor3);
         int numPoints3 = xPoints3.length;
         graphics.fillPolygon(xPoints3, yPoints3, numPoints3);
-        /*
-         * Downsample the image (by 10x) to the desired final size.
-         */
+
+        // Downsample the image (by 10x) to the desired final size.
         BufferedImage downsampledImage = Scalr.resize(image,
                 Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
                 finalSize, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
+
+        // Write the downsampled image to the asset file.
         String filePath
                 = String.format("%s/rock.png", assetDirPath);
         try {

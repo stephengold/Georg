@@ -76,30 +76,20 @@ final class MakeBanks {
      * @param arguments array of command-line arguments (not null)
      */
     public static void main(String[] arguments) {
-        /*
-         * Mute the chatty loggers found in some imported packages.
-         */
+        // Mute the chatty loggers found in some imported packages.
         Heart.setLoggingLevels(Level.WARNING);
-        /*
-         * Set the logging level for this class and also for writeImage().
-         */
-        //logger.setLevel(Level.INFO);
-        //Logger.getLogger(Heart.class.getName()).setLevel(Level.INFO);
-        /*
-         * Log the working directory.
-         */
+
+        // Log the working directory.
         String userDir = System.getProperty("user.dir");
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
-        /*
-         * Define colors.
-         */
+
+        // Define colors.
         float opacity = 1f;
         Color landColor = new Color(0.66f, 0.48f, 0.35f, opacity);
         Color waterColor = new Color(0f, 0f, 0.73f, opacity); // dark blue
-        /*
-         * Generate color image maps.
-         */
+
+        // Generate color image maps.
         for (int upstreamDX = -1; upstreamDX <= 1; ++upstreamDX) {
             for (int downstreamDX = -1; downstreamDX <= 1; ++downstreamDX) {
                 makeBank("left", landColor, waterColor, upstreamDX,
@@ -117,20 +107,16 @@ final class MakeBanks {
      */
     private static void makeBank(String leftRight, Color leftColor,
             Color rightColor, int upstreamDeltaX, int downstreamDeltaX) {
-        /*
-         * Create a blank, color buffered image for the texture map.
-         */
+        // Create a blank, color buffered image for the texture map.
         BufferedImage image = new BufferedImage(textureSize, textureSize,
                 BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
-        /*
-         * Start with all pixels leftColor.
-         */
+
+        // Start with all pixels leftColor.
         graphics.setColor(leftColor);
         graphics.fillRect(0, 0, textureSize, textureSize);
-        /*
-         * Fill a polygon on the right side with rightColor.
-         */
+
+        // Fill a polygon on the right side with rightColor.
         int center = textureSize / 2;
         int downstream = pixelX(downstreamDeltaX);
         int upstream = pixelX(-upstreamDeltaX);
@@ -144,15 +130,13 @@ final class MakeBanks {
         graphics.setColor(rightColor);
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
-        /*
-         * Downsample the image (by 10x) to the desired final size.
-         */
+
+        // Downsample the image (by 10x) to the desired final size.
         BufferedImage downsampledImage = Scalr.resize(image,
                 Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
                 finalSize, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
+
+        // Write the downsampled image to the asset file.
         String upstreamMpz = mpz(upstreamDeltaX);
         String downstreamMpz = mpz(downstreamDeltaX);
         String filePath = String.format("%s/%sBank%s%s.png", assetDirPath,

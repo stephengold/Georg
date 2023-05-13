@@ -80,31 +80,21 @@ final class MakeMine {
      * @param arguments array of command-line arguments (not null)
      */
     public static void main(String[] arguments) {
-        /*
-         * Mute the chatty loggers found in some imported packages.
-         */
+        // Mute the chatty loggers found in some imported packages.
         Heart.setLoggingLevels(Level.WARNING);
-        /*
-         * Set the logging level for this class and also for writeImage().
-         */
-        //logger.setLevel(Level.INFO);
-        //Logger.getLogger(Heart.class.getName()).setLevel(Level.INFO);
-        /*
-         * Log the working directory.
-         */
+
+        // Log the working directory.
         String userDir = System.getProperty("user.dir");
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
-        /*
-         * Define colors.
-         */
+
+        // Define colors.
         float opacity = 1f;
         Color wakeColor = new Color(0.24f, 0.24f, 0.73f, opacity); // light blue
         Color waterColor = new Color(0f, 0f, 0.73f, opacity); // dark blue
         Color mineColor = new Color(0.73f, 0f, 0f, opacity); // red
-        /*
-         * Generate the color image map.
-         */
+
+        // Generate the color image map.
         makeMine(mineColor, wakeColor, waterColor);
     }
     // *************************************************************************
@@ -116,20 +106,16 @@ final class MakeMine {
      */
     private static void makeMine(Color mineColor, Color wakeColor,
             Color waterColor) {
-        /*
-         * Create a blank, color buffered image for the texture map.
-         */
+        // Create a blank, color buffered image for the texture map.
         BufferedImage image = new BufferedImage(textureSize, textureSize,
                 BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
-        /*
-         * Start with all pixels waterColor.
-         */
+
+        // Start with all pixels waterColor.
         graphics.setColor(waterColor);
         graphics.fillRect(0, 0, textureSize, textureSize);
-        /*
-         * Fill a teardrop-shaped "wake" with wakeColor.
-         */
+
+        // Fill a teardrop-shaped "wake" with wakeColor.
         float xCenter = 0.5f * textureSize;
         float yCenter = 0.6f * textureSize;
         float wakeRadius = 0.35f * textureSize;
@@ -149,9 +135,8 @@ final class MakeMine {
         int[] yPoints = {0, y2, y2};
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
-        /*
-         * Fill a circle with mineColor.
-         */
+
+        // Fill a circle with mineColor.
         float mineRadius = 0.3f * textureSize;
         leftX = Math.round(xCenter - mineRadius);
         topY = Math.round(yCenter - mineRadius);
@@ -159,9 +144,8 @@ final class MakeMine {
         height = Math.round(yCenter + mineRadius) - topY;
         graphics.setColor(mineColor);
         graphics.fillOval(leftX, topY, width, height);
-        /*
-         * Fill horns with mineColor.
-         */
+
+        // Fill horns with mineColor.
         float halfAngle = 0.1f;
         float hornR = 0.45f * textureSize;
         float rSin1 = hornR * FastMath.sin(FastMath.QUARTER_PI - halfAngle);
@@ -185,15 +169,13 @@ final class MakeMine {
         int[] yPointsHorns2 = {yd, yc, ya, yb};
         int numPointsHorns2 = xPointsHorns2.length;
         graphics.fillPolygon(xPointsHorns2, yPointsHorns2, numPointsHorns2);
-        /*
-         * Downsample the image (by 10x) to the desired final size.
-         */
+
+        // Downsample the image (by 10x) to the desired final size.
         BufferedImage downsampledImage = Scalr.resize(image,
                 Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalSize,
                 finalSize, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
+
+        // Write the downsampled image to the asset file.
         String filePath = String.format("%s/mine.png", assetDirPath);
         try {
             Heart.writeImage(filePath, downsampledImage);

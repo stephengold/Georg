@@ -83,31 +83,21 @@ final class MakeRaft {
      * @param arguments array of command-line arguments (not null)
      */
     public static void main(String[] arguments) {
-        /*
-         * Mute the chatty loggers found in some imported packages.
-         */
+        // Mute the chatty loggers found in some imported packages.
         Heart.setLoggingLevels(Level.WARNING);
-        /*
-         * Set the logging level for this class and also for writeImage().
-         */
-        //logger.setLevel(Level.INFO);
-        //Logger.getLogger(Heart.class.getName()).setLevel(Level.INFO);
-        /*
-         * Log the working directory.
-         */
+
+        // Log the working directory.
         String userDir = System.getProperty("user.dir");
         logger.log(Level.INFO, "working directory is {0}",
                 MyString.quote(userDir));
-        /*
-         * Define colors.
-         */
+
+        // Define colors.
         float opacity = 1f;
         Color floatColor = new Color(0f, 0.5f, 0f, opacity); // green
         Color floorColor = new Color(0.2f, 0.2f, 0.2f, opacity); // dark gray
         Color waterColor = new Color(0f, 0f, 0.73f, opacity); // dark blue
-        /*
-         * Generate the color image map.
-         */
+
+        // Generate the color image map.
         int raftWidth = 2; // width of the raft (in cells)
         makeRaft(raftWidth, floatColor, floorColor, waterColor);
     }
@@ -119,21 +109,17 @@ final class MakeRaft {
      */
     private static void makeRaft(int raftWidth, Color floatColor,
             Color floorColor, Color waterColor) {
-        /*
-         * Create a blank, color buffered image for the texture map.
-         */
+        // Create a blank, color buffered image for the texture map.
         int textureWidth = raftWidth * textureHeight;
         BufferedImage image = new BufferedImage(textureWidth, textureHeight,
                 BufferedImage.TYPE_4BYTE_ABGR);
         Graphics2D graphics = image.createGraphics();
-        /*
-         * Start with all pixels waterColor.
-         */
+
+        // Start with all pixels waterColor.
         graphics.setColor(waterColor);
         graphics.fillRect(0, 0, textureWidth, textureHeight);
-        /*
-         * Fill a large octagon with floatColor.
-         */
+
+        // Fill a large octagon with floatColor.
         int left = 0;
         int right = textureWidth;
         int bottom = 0;
@@ -152,9 +138,8 @@ final class MakeRaft {
         graphics.setColor(floatColor);
         int numPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, numPoints);
-        /*
-         * Fill an inner octagon with floorColor.
-         */
+
+        // Fill an inner octagon with floorColor.
         float thickness = 0.3f * (top - bottom); // thickness of the float
         int pixels = Math.round(thickness);
         left += pixels;
@@ -175,17 +160,15 @@ final class MakeRaft {
         graphics.setColor(floorColor);
         int innerNumPoints = innerXPoints.length;
         graphics.fillPolygon(innerXPoints, innerYPoints, innerNumPoints);
-        /*
-         * Downsample the image (by 10x) to the desired final size.
-         */
+
+        // Downsample the image (by 10x) to the desired final size.
         int finalHeight = textureHeight / 10;
         int finalWidth = textureWidth / 10;
         BufferedImage downsampledImage = Scalr.resize(image,
                 Scalr.Method.ULTRA_QUALITY, Scalr.Mode.AUTOMATIC, finalWidth,
                 finalHeight, Scalr.OP_ANTIALIAS);
-        /*
-         * Write the downsampled image to the asset file.
-         */
+
+        // Write the downsampled image to the asset file.
         String filePath
                 = String.format("%s/raft%d.png", assetDirPath, raftWidth);
         try {
