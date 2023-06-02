@@ -3,12 +3,6 @@
 apply plugin: 'checkstyle'
 apply plugin: 'java'
 
-ext {
-    // module coordinates of external dependencies:
-    heartCoordinates = 'com.github.stephengold:Heart:8.6.0'
-    imgscalrCoordinates = 'org.imgscalr:imgscalr-lib:4.2'
-}
-
 sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_8
 

@@ -4,6 +4,12 @@ plugins {
     id 'base' // to add a "clean" task to the root project
 }
 
+ext {
+    // module coordinates of external dependencies:
+    heartCoordinates = 'com.github.stephengold:Heart:8.6.0'
+    imgscalrCoordinates = 'org.imgscalr:imgscalr-lib:4.2'
+}
+
 subprojects {
     apply from: rootProject.file('common.gradle')
 }
