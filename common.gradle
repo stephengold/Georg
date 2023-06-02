@@ -5,7 +5,7 @@ apply plugin: 'java'
 
 ext {
     // module coordinates of external dependencies:
-    heartCoordinates = 'com.github.stephengold:Heart:8.5.0'
+    heartCoordinates = 'com.github.stephengold:Heart:8.6.0'
     imgscalrCoordinates = 'org.imgscalr:imgscalr-lib:4.2'
 }
 
