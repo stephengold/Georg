@@ -23,11 +23,12 @@ Complete source code (in Java) is provided under
     + `git clone https://github.com/stephengold/Georg.git`
     + `cd Georg`
 3. Set the `JAVA_HOME` environment variable:
-  + using Bash:  `export JAVA_HOME="` *path to your JDK* `"`
+  + using Bash or Zsh: `export JAVA_HOME="` *path to your JDK* `"`
+  + using [Fish]: `set -g JAVA_HOME "` *path to installation* `"`
   + using Windows Command Prompt:  `set JAVA_HOME="` *path to your JDK* `"`
   + using PowerShell: `$env:JAVA_HOME = '` *path to your JDK* `'`
 4. Run the [Gradle] wrapper:
-  + using Bash or PowerShell: `./gradlew textures`
+  + using Bash or Fish or PowerShell or Zsh: `./gradlew textures`
   + using Windows Command Prompt: `.\gradlew textures`
 
 After a successful build,
@@ -74,6 +75,7 @@ correct the situation: sgold@sonic.net
 [ant]: https://ant.apache.org "Apache Ant Project"
 [bsd3]: https://opensource.org/licenses/BSD-3-Clause "3-Clause BSD License"
 [firefox]: https://www.mozilla.org/en-US/firefox "Firefox"
+[fish]: https://fishshell.com/ "Fish command-line shell"
 [fuzecreek]: https://github.com/stephengold/FuzeCreek "Fuze Creek Project"
 [git]: https://git-scm.com "Git"
 [github]: https://github.com "GitHub"
