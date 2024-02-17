@@ -3,9 +3,9 @@ for use in JMonkeyEngine applications.
 
 It contains 3 sub-projects:
 
- 1. FuzeCreekTextures: generate textures for [the FuzeCreek project][fuzecreek]
- 2. HeartTextures: generate textures for [the Heart project][heart]
- 3. MavTextures: generate textures for [the More Advanced Vehicles project][mav]
+1. FuzeCreekTextures: generate textures for [the FuzeCreek project][fuzecreek]
+2. HeartTextures: generate textures for [the Heart project][heart]
+3. MavTextures: generate textures for [the More Advanced Vehicles project][mav]
 
 Complete source code (in Java) is provided under
 [a 3-clause BSD license][license].
@@ -25,7 +25,7 @@ Complete source code (in Java) is provided under
 3. Set the `JAVA_HOME` environment variable:
   + using Bash or Zsh: `export JAVA_HOME="` *path to your JDK* `"`
   + using [Fish]: `set -g JAVA_HOME "` *path to installation* `"`
-  + using Windows Command Prompt:  `set JAVA_HOME="` *path to your JDK* `"`
+  + using Windows Command Prompt: `set JAVA_HOME="` *path to your JDK* `"`
   + using PowerShell: `$env:JAVA_HOME = '` *path to your JDK* `'`
 4. Run the [Gradle] wrapper:
   + using Bash or Fish or PowerShell or Zsh: `./gradlew textures`
@@ -63,7 +63,7 @@ the following software:
 
 I am grateful to [Github] and [Imgur]
 for providing free hosting for this project
- and many other open-source projects.
+and many other open-source projects.
 
 I'm also grateful to my dear Holly, for keeping me sane.
 
@@ -83,7 +83,7 @@ correct the situation: sgold@sonic.net
 [heart]: https://github.com/stephengold/Heart "Heart Project"
 [imgscalr]: https://github.com/rkalla/imgscalr "ImgScalr Library"
 [imgur]: https://imgur.com/ "Imgur"
-[jme]: https://jmonkeyengine.org  "jMonkeyEngine Project"
+[jme]: https://jmonkeyengine.org "jMonkeyEngine Project"
 [license]: https://github.com/stephengold/Georg/blob/master/LICENSE "Georg license"
 [markdown]: https://daringfireball.net/projects/markdown "Markdown Project"
 [mav]: https://github.com/stephengold/jme-vehicles "More Advanced Vehicles Project"
