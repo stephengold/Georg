@@ -22,11 +22,17 @@ Complete source code (in Java) is provided under
   + using [Git]:
     + `git clone https://github.com/stephengold/Georg.git`
     + `cd Georg`
-3. Set the `JAVA_HOME` environment variable:
-  + using Bash or Zsh: `export JAVA_HOME="` *path to your JDK* `"`
+3. Point the `JAVA_HOME` environment variable to your JDK installation:
+   (In other words, set it to the path of a directory/folder
+   containing a "bin" that contains a Java executable.
+   That path might look something like
+   "C:\Program Files\Eclipse Adoptium\jdk-17.0.3.7-hotspot"
+   or "/usr/lib/jvm/java-17-openjdk-amd64/" or
+   "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home" .)
+  + using Bash or Zsh: `export JAVA_HOME="` *path to installation* `"`
   + using [Fish]: `set -g JAVA_HOME "` *path to installation* `"`
-  + using Windows Command Prompt: `set JAVA_HOME="` *path to your JDK* `"`
-  + using PowerShell: `$env:JAVA_HOME = '` *path to your JDK* `'`
+  + using Windows Command Prompt: `set JAVA_HOME="` *path to installation* `"`
+  + using PowerShell: `$env:JAVA_HOME = '` *path to installation* `'`
 4. Run the [Gradle] wrapper:
   + using Bash or Fish or PowerShell or Zsh: `./gradlew textures`
   + using Windows Command Prompt: `.\gradlew textures`
