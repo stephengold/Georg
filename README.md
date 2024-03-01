@@ -58,6 +58,7 @@ the following software:
 
 + the [Firefox] web browser
 + the [Git] revision-control system and GitK commit viewer
++ the [GitKraken] client
 + the [Gradle] build tool
 + the [ImgScalr] Library
 + the Java compiler, standard doclet, and virtual machine
@@ -85,6 +86,7 @@ correct the situation: sgold@sonic.net
 [fuzecreek]: https://github.com/stephengold/FuzeCreek "Fuze Creek Project"
 [git]: https://git-scm.com "Git"
 [github]: https://github.com "GitHub"
+[gitkraken]: https://www.gitkraken.com "GitKraken client"
 [gradle]: https://gradle.org "Gradle Project"
 [heart]: https://github.com/stephengold/Heart "Heart Project"
 [imgscalr]: https://github.com/rkalla/imgscalr "ImgScalr Library"
