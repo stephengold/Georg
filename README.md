@@ -1,5 +1,5 @@
 The Georg Project provides procedurally generated assets
-for use in JMonkeyEngine applications.
+for use in [JMonkeyEngine][jme] applications.
 
 It contains 3 sub-projects:
 
@@ -19,7 +19,7 @@ Complete source code (in Java) is provided under
 1. Install a [Java Development Kit (JDK)][adoptium],
    if you don't already have one.
 2. Download and extract the Georg source code from GitHub:
-  + using Git:
+  + using [Git]:
     + `git clone https://github.com/stephengold/Georg.git`
     + `cd Georg`
 3. Set the `JAVA_HOME` environment variable:
