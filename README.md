@@ -1,7 +1,7 @@
 The Georg Project provides procedurally generated assets
 for use in [JMonkeyEngine][jme] applications.
 
-It contains 3 sub-projects:
+It contains 3 subprojects:
 
 1. FuzeCreekTextures: generate textures for [the FuzeCreek project][fuzecreek]
 2. HeartTextures: generate textures for [the Heart project][heart]
