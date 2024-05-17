@@ -1,6 +1,11 @@
+# Ignore Gradle's project-specific cache directory:
 /.gradle/
+
+# Ignore IDE-specific directories:
 /.idea/
 /.nb-gradle/
+
+# Ignore Gradle's build output directories:
 /FuzeCreekTextures/build/
 /HeartTextures/build/
 /MavTextures/build/
