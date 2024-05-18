@@ -1,0 +1,14 @@
+## TOML version catalog for the j-ogg-all project
+
+[versions]
+
+checkstyle = "9.3"
+
+[libraries]
+
+heart = "com.github.stephengold:Heart:9.0.0"
+imgscalr = "org.imgscalr:imgscalr-lib:4.2"
+
+[bundles]
+
+[plugins]

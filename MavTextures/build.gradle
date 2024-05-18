@@ -7,8 +7,8 @@ ext {
 }
 
 dependencies {
-    implementation heartCoordinates
-    implementation imgscalrCoordinates
+    implementation(libs.heart)
+    implementation(libs.imgscalr)
 }
 
 // generate textures
