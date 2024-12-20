@@ -15,7 +15,7 @@ dependencies {
 
 tasks.register('textures') {
     dependsOn = [ 'banks', 'mine', 'raft', 'rock' ]
-    description 'Generates texture assets for the Fuze Creek Project.'
+    description = 'Generates texture assets for the Fuze Creek Project.'
 }
 
 tasks.register('banks', JavaExec) {

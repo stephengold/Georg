@@ -16,7 +16,7 @@ dependencies {
 tasks.register('textures') {
     dependsOn = ['cross', 'lozenge', 'mascle', 'pin', 'ring',
         'saltire', 'solidCircle', 'square']
-    description 'Generates texture assets included in the Heart Library.'
+    description = 'Generates texture assets included in the Heart Library.'
 }
 
 tasks.register('cross', JavaExec) {
