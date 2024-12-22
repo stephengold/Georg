@@ -6,6 +6,7 @@
 /.nb-gradle/
 
 # Ignore Gradle's build output directories:
+/build/
 /FuzeCreekTextures/build/
 /HeartTextures/build/
 /MavTextures/build/
