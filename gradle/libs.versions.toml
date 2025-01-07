@@ -6,7 +6,7 @@ checkstyle = "9.3"
 
 [libraries]
 
-heart = "com.github.stephengold:Heart:9.1.0"
+heart = "com.github.stephengold:Heart:9.2.0"
 imgscalr = "org.imgscalr:imgscalr-lib:4.2"
 
 [bundles]
