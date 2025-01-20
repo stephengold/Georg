@@ -15,7 +15,7 @@ jobs:
           java-version: 8
       - uses: actions/checkout@v4
       - uses: gradle/actions/wrapper-validation@v4
-      - run: ./gradlew textures --console=plain --no-daemon --stacktrace
+      - run: ./gradlew textures --console=plain --stacktrace
 
   Java23-Windows:
     if: contains(toJson(github.event.commits), '[ci skip] ') == false
@@ -26,5 +26,5 @@ jobs:
           distribution: 'zulu'
           java-version: 23
       - uses: actions/checkout@v4
-      - run: ./gradlew textures --console=plain --no-daemon --stacktrace
+      - run: ./gradlew textures --console=plain --stacktrace
         shell: bash
