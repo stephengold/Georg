@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2021-2023, Stephen Gold
+ Copyright (c) 2021-2025 Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -68,6 +68,11 @@ class MakeSquareTexture {
     // *************************************************************************
     // constructors
 
+    /**
+     * Instantiate for the specified texture size.
+     *
+     * @param textureSize the number of pixels along each edge (&gt;0)
+     */
     protected MakeSquareTexture(int textureSize) {
         this.textureSize = textureSize;
     }
