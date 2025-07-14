@@ -86,10 +86,10 @@ class MakeSquareTexture {
      * @return a new graphics context (not null)
      */
     protected Graphics2D createOpaque(Color color) {
-        image = new BufferedImage(textureSize, textureSize,
-                BufferedImage.TYPE_3BYTE_BGR);
+        this.image = new BufferedImage(
+                textureSize, textureSize, BufferedImage.TYPE_3BYTE_BGR);
 
-        graphics = image.createGraphics();
+        this.graphics = image.createGraphics();
         graphics.setColor(color);
         graphics.fillRect(0, 0, textureSize, textureSize);
 
@@ -102,7 +102,7 @@ class MakeSquareTexture {
      * @return a new graphics context (not null)
      */
     protected Graphics2D createBufferedImage() {
-        image = new BufferedImage(textureSize, textureSize,
+        this.image = new BufferedImage(textureSize, textureSize,
                 BufferedImage.TYPE_4BYTE_ABGR);
         graphics = image.createGraphics();
 
