@@ -17,6 +17,7 @@ Complete source code (in Java) is provided under
 ## How to build Georg from source
 
 1. Install a [Java Development Kit (JDK)][adoptium],
+   version 17 or higher,
    if you don't already have one.
 2. Download and extract the Georg source code from GitHub:
   + using [Git]:
