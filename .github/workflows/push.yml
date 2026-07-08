@@ -14,7 +14,7 @@ jobs:
           distribution: 'zulu'
           java-version: 21
       - uses: actions/checkout@v7
-      - uses: gradle/actions/wrapper-validation@v6
+      - uses: gradle/actions/setup-gradle@v6
       - run: ./gradlew textures --console=plain --stacktrace
 
   Java26-Windows:
@@ -26,5 +26,6 @@ jobs:
           distribution: 'liberica'
           java-version: 26
       - uses: actions/checkout@v7
+      - uses: gradle/actions/setup-gradle@v6
       - run: ./gradlew textures --console=plain --stacktrace
         shell: bash
