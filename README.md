@@ -79,7 +79,7 @@ If I've misattributed anything or left anyone out, please let me know, so I can
 correct the situation: sgold@sonic.net
 
 
-[adoptium]: https://adoptium.net/releases.html "Adoptium Project"
+[adoptium]: https://adoptium.net/temurin/releases/ "Adoptium Project"
 [ant]: https://ant.apache.org "Apache Ant Project"
 [bsd3]: https://opensource.org/licenses/BSD-3-Clause "3-Clause BSD License"
 [firefox]: https://www.mozilla.org/en-US/firefox "Firefox"
