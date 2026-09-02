@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020-2023, Stephen Gold
+ Copyright (c) 2020-2026 Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -119,8 +119,8 @@ final class MakeNeedle {
         graphics.fillOval(0, 700, 120, 120);
 
         // trapezoidal needle
-        int[] xPoints = new int[]{40, 80, 70, 50};
-        int[] yPoints = new int[]{900, 900, 0, 0};
+        int[] xPoints = new int[] {40, 80, 70, 50};
+        int[] yPoints = new int[] {900, 900, 0, 0};
         graphics.fillPolygon(xPoints, yPoints, xPoints.length);
 
         // circular pivot

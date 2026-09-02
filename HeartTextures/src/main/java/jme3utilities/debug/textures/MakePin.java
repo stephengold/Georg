@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2020-2023, Stephen Gold
+ Copyright (c) 2020-2026 Stephen Gold
  All rights reserved.
 
  Redistribution and use in source and binary forms, with or without
@@ -113,8 +113,8 @@ final class MakePin {
 
         graphics.fillOval(440, 0, 400, 400);
 
-        int[] xPoints = new int[]{460, 640, 820};
-        int[] yPoints = new int[]{300, 640, 300};
+        int[] xPoints = new int[] {460, 640, 820};
+        int[] yPoints = new int[] {300, 640, 300};
         int nPoints = xPoints.length;
         graphics.fillPolygon(xPoints, yPoints, nPoints);
         /*
